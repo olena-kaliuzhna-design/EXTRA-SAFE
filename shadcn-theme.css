@@ -1,0 +1,47 @@
+/* shadcn/ui theme for EXTRA SAFE — paste into app/globals.css (Tailwind + shadcn).
+   Mapping chosen from Figma 'Desktop new' tokens (names in Figma follow shadcn conventions). Dark is default (.dark is NOT needed); light via [data-theme=light] or .light */
+@layer base {
+ :root {
+    --background: 0 0.0% 12.5%; /* background */
+    --foreground: 0 0.0% 100.0%; /* foreground */
+    --card: 0 0.0% 14.9%; /* card-secondary */
+    --card-foreground: 0 0.0% 100.0%; /* foreground */
+    --popover: 0 0.0% 14.9%; /* card-secondary */
+    --popover-foreground: 0 0.0% 100.0%; /* foreground */
+    --primary: 154 50.2% 57.5%; /* primary-main */
+    --primary-foreground: 0 0.0% 12.5%; /* primary-foreground */
+    --secondary: 0 0.0% 19.6%; /* button-light */
+    --secondary-foreground: 0 0.0% 100.0%; /* foreground */
+    --muted: 0 0.0% 23.1%; /* card-dark */
+    --muted-foreground: 0 0.0% 46.7%; /* helper */
+    --accent: 0 0.0% 25.1%; /* icon-hover */
+    --accent-foreground: 0 0.0% 100.0%; /* foreground */
+    --destructive: 355 65.5% 50.0%; /* destructive-main */
+    --destructive-foreground: 0 0.0% 100.0%; /* destructive-foreground */
+    --border: 0 0.0% 27.1%; /* border */
+    --input: 0 0.0% 35.3%; /* input */
+    --ring: 154 50.2% 57.5%; /* ring */
+    --radius: 0.75rem; /* radius 3 = 12px */
+  }
+  [data-theme="light"], .light {
+    --background: 0 0.0% 94.9%;
+    --foreground: 0 0.0% 12.2%;
+    --card: 0 0.0% 100.0%;
+    --card-foreground: 0 0.0% 12.2%;
+    --popover: 0 0.0% 100.0%;
+    --popover-foreground: 0 0.0% 12.2%;
+    --primary: 154 66.4% 74.3%;
+    --primary-foreground: 0 0.0% 12.5%;
+    --secondary: 0 0.0% 100.0%;
+    --secondary-foreground: 0 0.0% 12.2%;
+    --muted: 0 0.0% 94.5%;
+    --muted-foreground: 0 0.0% 56.5%;
+    --accent: 0 0.0% 88.6%;
+    --accent-foreground: 0 0.0% 12.2%;
+    --destructive: 359 74.1% 56.1%;
+    --destructive-foreground: 0 0.0% 100.0%;
+    --border: 0 0.0% 89.4%;
+    --input: 0 2.9% 79.8%;
+    --ring: 154 43.6% 54.1%;
+  }
+}

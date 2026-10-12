@@ -1,0 +1,341 @@
+/* EXTRA SAFE Design System — tokens generated from Figma file 5fZVCsxRa1gpL0bvZdPZ6u ("Web, Landing, App (Copy)", page "Styles").
+   Sources: variable collections "Global Tokens" (COLORS primitives; Desktop new semantic Dark theme / Light Theme), text styles, effect styles, grid styles.
+   Dark theme is default. Light theme: data-theme="light" on <html> (or any ancestor).
+   Font: DM Sans (Google Fonts). */
+
+:root {
+  /* ===== Primitive palette (COLORS/*) — use semantic tokens in UI; primitives only for illustrations/charts/new tokens ===== */
+  --es-primary-100: #def4eb;
+  --es-primary-200: #bee9d7;
+  --es-primary-300: #9ddfc2;
+  --es-primary-400: #7dd4ae;
+  --es-primary-500: #5cc99a;
+  --es-primary-600: #3fbf88;
+  --es-primary-700: #36a374;
+  --es-primary-800: #2c865f;
+  --es-primary-900: #23694b;
+  --es-primary-1000: #194d36;
+  --es-primary-alpha-10: rgba(92, 201, 154, 0.102);
+  --es-secondary-100: #d5e0f6;
+  --es-secondary-200: #acc1ed;
+  --es-secondary-300: #82a2e3;
+  --es-secondary-400: #5983da;
+  --es-secondary-500: #2f64d1;
+  --es-secondary-600: #2857b7;
+  --es-secondary-700: #224a9c;
+  --es-secondary-800: #1c3d81;
+  --es-secondary-900: #173066;
+  --es-secondary-1000: #11244b;
+  --es-secondary-alpha-10: rgba(47, 100, 209, 0.102);
+  --es-neutral-100: #ededed;
+  --es-neutral-200: #d6d6d6;
+  --es-neutral-300: #bfbfbf;
+  --es-neutral-400: #a9a9a9;
+  --es-neutral-500: #929292;
+  --es-neutral-600: #7b7b7b;
+  --es-neutral-700: #646464;
+  --es-neutral-800: #4e4e4e;
+  --es-neutral-900: #373737;
+  --es-neutral-1000: #202020;
+  --es-neutral-alpha-10: rgba(32, 32, 32, 0.102);
+  --es-neutral-alpha-70: rgba(32, 32, 32, 0.698);
+  --es-grey-100: #d6d6d6;
+  --es-grey-200: #c1c1c1;
+  --es-grey-300: #acacac;
+  --es-grey-400: #989898;
+  --es-grey-500: #838383;
+  --es-grey-600: #6e6e6e;
+  --es-grey-700: #5a5a5a;
+  --es-grey-800: #454545;
+  --es-grey-900: #323232;
+  --es-grey-1000: #202020;
+  --es-grey-alpha-10: rgba(69, 69, 69, 0.102);
+  --es-red-100: #f8dcde;
+  --es-red-200: #f0b9bd;
+  --es-red-300: #e9969d;
+  --es-red-400: #e2727c;
+  --es-red-500: #da4f5b;
+  --es-red-600: #d32c3a;
+  --es-red-700: #b32531;
+  --es-red-800: #941f29;
+  --es-red-900: #741820;
+  --es-red-1000: #541217;
+  --es-red-alpha-10: rgba(211, 44, 58, 0.102);
+  --es-green-100: #84ebb4;
+  --es-green-200: #1fc16b;
+  --es-green-alpha-10: rgba(31, 193, 107, 0.102);
+  --es-blue-100: #cfe7fd;
+  --es-blue-200: #a9d4fb;
+  --es-blue-300: #83c1fa;
+  --es-blue-400: #5daef8;
+  --es-blue-500: #379bf7;
+  --es-blue-600: #1188f5;
+  --es-blue-700: #0974d6;
+  --es-blue-800: #075fb0;
+  --es-blue-900: #064b8a;
+  --es-blue-1000: #043664;
+
+  /* ===== Radius (radius/radius 1–5) ===== */
+  --radius-1: 4px;
+  --radius-2: 8px;
+  --radius-3: 12px;
+  --radius-4: 16px;
+  --radius-5: 24px;
+  --radius-full: 9999px;
+
+  /* ===== Font ===== */
+  --font-sans: 'DM Sans Variable', 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* ===== Effects (effect styles) ===== */
+  --shadow-header: 0 12px 24px rgba(20, 20, 43, 0.06), 0 -2px 4px rgba(20, 20, 43, 0.02), 0 3px 14px rgba(92, 201, 154, 0.03);
+  --shadow-feedback: 0 0 2px rgba(125,125,125,.10), 0 3px 0 rgba(125,125,125,.09), 6px 7px 5px rgba(125,125,125,.05), 11px 12px 6px rgba(125,125,125,.01);
+  --shadow-card: 2px 2px 10px 10px rgba(3, 243, 139, 0.05);
+  --shadow-cookie: 0 10px 30px rgba(45,45,45,.20), 0 30px 70px -10px rgba(40,40,40,.25), 0 1px 20px rgba(152,161,178,.10);
+  --shadow-nickname: 0 0 8.1px rgba(0, 0, 0, 0.30);
+  --shadow-button: -1px 1px 4px rgba(0, 0, 0, 0.05);
+  --shadow-message-left: 3px 4px 10px rgba(0,0,0,.60), 0 4px 4px rgba(0,0,0,.25);
+
+  /* ===== Gradients (paint styles) ===== */
+  --gradient-brand: linear-gradient(180deg, #2f64d1 0%, #5cc99a 100%);       /* logo mark & brand swatch: blue top -> green bottom */
+  --gradient-logo: linear-gradient(90deg, #3169cf 0%, #5ac59c 100%);         /* "Gradient logo" */
+  --gradient-red: linear-gradient(90deg, #f67424 0%, #d32c3a 100%);          /* "красний" — warnings/promo */
+  --gradient-stroke: linear-gradient(96deg, #5cc99a 0%, rgba(32,32,32,0) 100%); /* "Stroke" — glowing borders */
+  --gradient-background: linear-gradient(87deg, rgba(54,163,116,.2) 0%, rgba(32,32,32,.2) 100%); /* "Background gradient" */
+  --gradient-video: linear-gradient(90deg, rgba(54,163,116,.2) 0%, rgba(32,32,32,.2) 100%);      /* "Video background" */
+  --gradient-green-white: linear-gradient(180deg, #5cc99a 0%, #ffffff 100%);
+  /* App/landing atmospheric background ("1 messages view"): blurred blue + green blobs on #1f1f1f */
+  --bg-atmosphere: radial-gradient(55% 75% at 100% 20%, rgba(47,100,209,.55) 0%, rgba(47,100,209,0) 70%), radial-gradient(55% 70% at 0% 100%, rgba(92,201,154,.45) 0%, rgba(92,201,154,0) 70%), #1f1f1f;
+
+  /* ===== Layout ===== */
+  --container-max: 1312px;      /* 2xl grid: 12 × 80 + 11 × 32 */
+
+  --grid-columns: 4; --grid-gutter: 8px; --grid-margin: 24px; /* sm (Landing page/sm) */
+}
+
+/* ===== Semantic tokens — DARK (Figma: Global Tokens / Desktop new / Dark theme) ===== */
+:root, [data-theme="dark"] {
+  color-scheme: dark;
+  --background: #202020; /* page background */
+  --background-secondary: #181818; /* secondary page areas, sidebars */
+  --foreground: #ffffff; /* main text */
+  --card-main: #6e6e6e;
+  --card-light: #545454;
+  --card-dark: #3b3b3b; /* default card surface */
+  --card-secondary: #262626; /* raised panels / cards on background */
+  --card-secondary-light: #c5c5c5;
+  --card-secondary-dark: #323232;
+  --card-foreground: #ffffff; /* text on cards */
+  --popover: #929292; /* tooltips / popovers */
+  --popover-foreground: #ffffff;
+  --primary-main: #5cc99a; /* brand green, main CTA */
+  --primary-light: #3fbf88; /* CTA hover */
+  --primary-dark: #5cc99a; /* CTA pressed */
+  --primary-foreground: #202020; /* text on primary */
+  --secondary-main: #82a2e3; /* brand blue accents */
+  --secondary-light: #6b8fda;
+  --secondary-dark: #4d77ce;
+  --secondary-foreground: #323232;
+  --blue-500: #2f64d1; /* brand blue (logo gradient start) */
+  --muted: #2c865f;
+  --muted-foreground: #535353; /* muted text */
+  --destructive-main: #d32c3a; /* errors, delete */
+  --destructive-light: #da4f5b;
+  --destructive-dark: #941f29;
+  --destructive-foreground: #ffffff;
+  --accent-foreground: #202020;
+  --success: #ffffff; /* (white in Figma) */
+  --color: #ffffff; /* always white */
+  --border: #454545; /* default borders/dividers */
+  --border-secondary: #686868; /* stronger borders */
+  --input: #5a5a5a; /* input borders */
+  --ring: #5cc99a; /* focus ring */
+  --button-light: #323232; /* secondary button bg */
+  --button-dark: #282828; /* secondary button hover/pressed */
+  --icon-primary: #f1f1f1;
+  --icon-secondary: #535353;
+  --icon-on-color: #202020; /* icon on primary */
+  --icon-hover: #404040; /* icon button hover bg */
+  --icon-secondary-hover: #6e6e6e;
+  --icon-disabled: #3f3f3f;
+  --helper: #777777; /* helper / hint text */
+  --gray-200: #c1c1c1; /* alias Grey 200 / Grey 900 */
+  --alpha: rgba(35, 35, 35, 0.8); /* overlay / scrim */
+  --alpha-white: rgba(255, 255, 255, 0.2); /* subtle overlay */
+  --alpha-green: rgba(92, 201, 154, 0.149); /* green tint bg */
+  --alpha-red: rgba(216, 96, 106, 0.102); /* red tint bg */
+}
+
+/* ===== Semantic tokens — LIGHT (Figma: Global Tokens / Desktop new / Light Theme) ===== */
+[data-theme="light"] {
+  color-scheme: light;
+  --background: #f2f2f2; /* page background */
+  --background-secondary: #f3f3f3; /* secondary page areas, sidebars */
+  --foreground: #1f1f1f; /* main text */
+  --card-main: #d6d6d6;
+  --card-light: #e4e4e4;
+  --card-dark: #f1f1f1; /* default card surface */
+  --card-secondary: #ffffff; /* raised panels / cards on background */
+  --card-secondary-light: #7f7f7f;
+  --card-secondary-dark: #202020;
+  --card-foreground: #454545; /* text on cards */
+  --popover: #b7b7b7; /* tooltips / popovers */
+  --popover-foreground: #ffffff;
+  --primary-main: #92e9c4; /* brand green, main CTA */
+  --primary-light: #3fbf88; /* CTA hover */
+  --primary-dark: #5ec89a; /* CTA pressed */
+  --primary-foreground: #202020; /* text on primary */
+  --secondary-main: #82a2e3; /* brand blue accents */
+  --secondary-light: #6b8fda;
+  --secondary-dark: #4d77ce;
+  --secondary-foreground: #b1b1b1;
+  --blue-500: #2f64d1; /* brand blue (logo gradient start) */
+  --muted: #2c865f;
+  --muted-foreground: #a5a5a5; /* muted text */
+  --destructive-main: #e23c3f; /* errors, delete */
+  --destructive-light: #da4f5b;
+  --destructive-dark: #941f29;
+  --destructive-foreground: #ffffff;
+  --accent-foreground: #faf9f9;
+  --success: #ffffff; /* (white in Figma) */
+  --color: #ffffff; /* always white */
+  --border: #e4e4e4; /* default borders/dividers */
+  --border-secondary: #d9d9d9; /* stronger borders */
+  --input: #cdcaca; /* input borders */
+  --ring: #57bd91; /* focus ring */
+  --button-light: #ffffff; /* secondary button bg */
+  --button-dark: #e4e4e4; /* secondary button hover/pressed */
+  --icon-primary: #737373;
+  --icon-secondary: #8e8e8e;
+  --icon-on-color: #f2f2f2; /* icon on primary */
+  --icon-hover: #e2e2e2; /* icon button hover bg */
+  --icon-secondary-hover: #a5a5a5;
+  --icon-disabled: #949494;
+  --helper: #909090; /* helper / hint text */
+  --gray-200: #323232; /* alias Grey 200 / Grey 900 */
+  --alpha: rgba(35, 35, 35, 0.502); /* overlay / scrim */
+  --alpha-white: rgba(35, 35, 35, 0.2); /* subtle overlay */
+  --alpha-green: rgba(146, 233, 196, 0.2); /* green tint bg */
+  --alpha-red: rgba(211, 44, 58, 0.102); /* red tint bg */
+}
+
+/* ===== Responsive typography (sizes xs / sm 360 / md 768 / lg 1024–1531 / xl 1532+) ===== */
+:root {
+  --text-h1-size: 24px; --text-h1-lh: 32px; --text-h1-weight: 600;
+  --text-h2-size: 20px; --text-h2-lh: 28px; --text-h2-weight: 600;
+  --text-h3-size: 17px; --text-h3-lh: 24px; --text-h3-weight: 600;
+  --text-h4-size: 16px; --text-h4-lh: 24px; --text-h4-weight: 500;
+  --text-subtitle1-size: 14px; --text-subtitle1-lh: 20px; --text-subtitle1-weight: 500;
+  --text-subtitle2-size: 13px; --text-subtitle2-lh: 18px; --text-subtitle2-weight: 500;
+  --text-body1-size: 16px; --text-body1-lh: 24px; --text-body1-weight: 400;
+  --text-body2-size: 14px; --text-body2-lh: 18px; --text-body2-weight: 400;
+  --text-body3-size: 12px; --text-body3-lh: 18px; --text-body3-weight: 400;
+  --text-button1-size: 16px; --text-button1-lh: 22px; --text-button1-weight: 500;
+  --text-button2-size: 12px; --text-button2-lh: 18px; --text-button2-weight: 500;
+  --text-modal-title-size: 20px; --text-modal-title-lh: 24px; --text-modal-title-weight: 500;
+}
+@media (min-width: 360px) { /* sm */
+  :root {
+    --text-h1-size: 28px; --text-h1-lh: 36px; --text-h1-weight: 600;
+    --text-h2-size: 22px; --text-h2-lh: 30px; --text-h2-weight: 600;
+    --text-h3-size: 19px; --text-h3-lh: 26px; --text-h3-weight: 600;
+    --text-h4-size: 17px; --text-h4-lh: 24px; --text-h4-weight: 600;
+    --text-subtitle1-size: 15px; --text-subtitle1-lh: 22px; --text-subtitle1-weight: 500;
+    --text-subtitle2-size: 14px; --text-subtitle2-lh: 20px; --text-subtitle2-weight: 500;
+    --text-body1-size: 17px; --text-body1-lh: 24px; --text-body1-weight: 400;
+    --text-body2-size: 15px; --text-body2-lh: 20px; --text-body2-weight: 400;
+    --text-body3-size: 13px; --text-body3-lh: 20px; --text-body3-weight: 400;
+    --text-button1-size: 17px; --text-button1-lh: 24px; --text-button1-weight: 500;
+    --text-button2-size: 13px; --text-button2-lh: 20px; --text-button2-weight: 500;
+    --text-modal-title-size: 22px; --text-modal-title-lh: 26px; --text-modal-title-weight: 600;
+    --grid-columns: 4; --grid-gutter: 8px; --grid-margin: 24px; /* Landing page/sm */
+  }
+}
+@media (min-width: 768px) { /* md */
+  :root {
+    --text-h1-size: 32px; --text-h1-lh: 40px; --text-h1-weight: 600;
+    --text-h2-size: 28px; --text-h2-lh: 36px; --text-h2-weight: 600;
+    --text-h3-size: 22px; --text-h3-lh: 30px; --text-h3-weight: 600;
+    --text-h4-size: 19px; --text-h4-lh: 26px; --text-h4-weight: 600;
+    --text-subtitle1-size: 16px; --text-subtitle1-lh: 24px; --text-subtitle1-weight: 500;
+    --text-subtitle2-size: 15px; --text-subtitle2-lh: 22px; --text-subtitle2-weight: 500;
+    --text-body1-size: 18px; --text-body1-lh: 28px; --text-body1-weight: 400;
+    --text-body2-size: 16px; --text-body2-lh: 22px; --text-body2-weight: 400;
+    --text-body3-size: 14px; --text-body3-lh: 20px; --text-body3-weight: 400;
+    --text-button1-size: 18px; --text-button1-lh: 26px; --text-button1-weight: 500;
+    --text-button2-size: 15px; --text-button2-lh: 22px; --text-button2-weight: 500;
+    --text-modal-title-size: 24px; --text-modal-title-lh: 28px; --text-modal-title-weight: 600;
+    --grid-columns: 8; --grid-gutter: 24px; --grid-margin: 40px; /* Landing page/md */
+  }
+}
+@media (min-width: 1024px) { /* lg */
+  :root {
+    --text-h1-size: 48px; --text-h1-lh: 62px; --text-h1-weight: 600;
+    --text-h2-size: 36px; --text-h2-lh: 47px; --text-h2-weight: 600;
+    --text-h3-size: 28px; --text-h3-lh: 36px; --text-h3-weight: 600;
+    --text-h4-size: 22px; --text-h4-lh: 30px; --text-h4-weight: 600;
+    --text-subtitle1-size: 18px; --text-subtitle1-lh: 26px; --text-subtitle1-weight: 500;
+    --text-subtitle2-size: 16px; --text-subtitle2-lh: 24px; --text-subtitle2-weight: 500;
+    --text-body1-size: 20px; --text-body1-lh: 30px; --text-body1-weight: 400;
+    --text-body2-size: 18px; --text-body2-lh: 24px; --text-body2-weight: 400;
+    --text-body3-size: 15px; --text-body3-lh: 22px; --text-body3-weight: 400;
+    --text-button1-size: 19px; --text-button1-lh: 28px; --text-button1-weight: 500;
+    --text-button2-size: 16px; --text-button2-lh: 24px; --text-button2-weight: 500;
+    --text-modal-title-size: 26px; --text-modal-title-lh: 32px; --text-modal-title-weight: 600;
+    --grid-columns: 12; --grid-gutter: 24px; --grid-margin: 80px; /* Landing page/lg */
+  }
+}
+@media (min-width: 1532px) { /* xl */
+  :root {
+    --text-h1-size: 58px; --text-h1-lh: 70px; --text-h1-weight: 600;
+    --text-h2-size: 48px; --text-h2-lh: 50px; --text-h2-weight: 600;
+    --text-h3-size: 36px; --text-h3-lh: 44px; --text-h3-weight: 600;
+    --text-h4-size: 28px; --text-h4-lh: 36px; --text-h4-weight: 600;
+    --text-subtitle1-size: 20px; --text-subtitle1-lh: 28px; --text-subtitle1-weight: 600;
+    --text-subtitle2-size: 18px; --text-subtitle2-lh: 26px; --text-subtitle2-weight: 500;
+    --text-body1-size: 24px; --text-body1-lh: 34px; --text-body1-weight: 400;
+    --text-body2-size: 20px; --text-body2-lh: 26px; --text-body2-weight: 400;
+    --text-body3-size: 16px; --text-body3-lh: 24px; --text-body3-weight: 400;
+    --text-button1-size: 20px; --text-button1-lh: 30px; --text-button1-weight: 500;
+    --text-button2-size: 18px; --text-button2-lh: 26px; --text-button2-weight: 500;
+    --text-modal-title-size: 26px; --text-modal-title-lh: 32px; --text-modal-title-weight: 600;
+    --grid-columns: 12; --grid-gutter: 32px; --grid-margin: max(24px, calc((100vw - 1120px) / 2)); /* Landing page/xl: 12 × 64px, gutter 32, centred (1120) */
+  }
+}
+@media (min-width: 1920px) { /* 2xl */ :root { --grid-margin: max(24px, calc((100vw - 1312px) / 2)); } } /* Landing page/2xl: 12 × 80px, gutter 32, centred (1312) */
+
+/* Typography classes — one per Figma text style family */
+.text-h1 { font-family: var(--font-sans); font-size: var(--text-h1-size); line-height: var(--text-h1-lh); font-weight: var(--text-h1-weight); }
+.text-h2 { font-family: var(--font-sans); font-size: var(--text-h2-size); line-height: var(--text-h2-lh); font-weight: var(--text-h2-weight); }
+.text-h3 { font-family: var(--font-sans); font-size: var(--text-h3-size); line-height: var(--text-h3-lh); font-weight: var(--text-h3-weight); }
+.text-h4 { font-family: var(--font-sans); font-size: var(--text-h4-size); line-height: var(--text-h4-lh); font-weight: var(--text-h4-weight); }
+.text-subtitle1 { font-family: var(--font-sans); font-size: var(--text-subtitle1-size); line-height: var(--text-subtitle1-lh); font-weight: var(--text-subtitle1-weight); }
+.text-subtitle2 { font-family: var(--font-sans); font-size: var(--text-subtitle2-size); line-height: var(--text-subtitle2-lh); font-weight: var(--text-subtitle2-weight); }
+.text-body1 { font-family: var(--font-sans); font-size: var(--text-body1-size); line-height: var(--text-body1-lh); font-weight: var(--text-body1-weight); }
+.text-body2 { font-family: var(--font-sans); font-size: var(--text-body2-size); line-height: var(--text-body2-lh); font-weight: var(--text-body2-weight); }
+.text-body3 { font-family: var(--font-sans); font-size: var(--text-body3-size); line-height: var(--text-body3-lh); font-weight: var(--text-body3-weight); }
+.text-button1 { font-family: var(--font-sans); font-size: var(--text-button1-size); line-height: var(--text-button1-lh); font-weight: var(--text-button1-weight); }
+.text-button2 { font-family: var(--font-sans); font-size: var(--text-button2-size); line-height: var(--text-button2-lh); font-weight: var(--text-button2-weight); }
+.text-modal-title { font-family: var(--font-sans); font-size: var(--text-modal-title-size); line-height: var(--text-modal-title-lh); font-weight: var(--text-modal-title-weight); }
+.text-h1-app { font-family: var(--font-sans); font-size: 35px; line-height: 150%; font-weight: 600; letter-spacing: 0; }
+.text-h2-app { font-family: var(--font-sans); font-size: 32px; line-height: 150%; font-weight: 500; letter-spacing: 0; }
+.text-h3-app { font-family: var(--font-sans); font-size: 24px; line-height: 150%; font-weight: 500; letter-spacing: 0; }
+.text-h4-app { font-family: var(--font-sans); font-size: 20px; line-height: 150%; font-weight: 500; letter-spacing: 0; }
+.text-subtitle1-app { font-family: var(--font-sans); font-size: 18px; line-height: 160%; font-weight: 500; letter-spacing: 0; }
+.text-subtitle2-app { font-family: var(--font-sans); font-size: 16px; line-height: 160%; font-weight: 400; letter-spacing: 0; }
+.text-body1-app { font-family: var(--font-sans); font-size: 18px; line-height: 160%; font-weight: 400; letter-spacing: 0; }
+.text-body2-app { font-family: var(--font-sans); font-size: 16px; line-height: 160%; font-weight: 300; letter-spacing: 0; }
+.text-body3-app { font-family: var(--font-sans); font-size: 14px; line-height: 160%; font-weight: 300; letter-spacing: 0; }
+.text-caption-app { font-family: var(--font-sans); font-size: 12px; line-height: 160%; font-weight: 300; letter-spacing: 0; }
+.text-caption { font-family: var(--font-sans); font-size: 12px; line-height: 16px; font-weight: 400; letter-spacing: 0.4px; }
+.text-overline { font-family: var(--font-sans); font-size: 12px; line-height: 16px; font-weight: 400; letter-spacing: 1px; text-transform: uppercase;}
+.text-button-large { font-family: var(--font-sans); font-size: 18px; line-height: normal; font-weight: 500; letter-spacing: 0; }
+.text-button-medium { font-family: var(--font-sans); font-size: 16px; line-height: normal; font-weight: 500; letter-spacing: 0; }
+.text-button-small { font-family: var(--font-sans); font-size: 14px; line-height: normal; font-weight: 500; letter-spacing: 0; }
+.text-link-medium { font-family: var(--font-sans); font-size: 16px; line-height: normal; font-weight: 400; letter-spacing: 0; text-decoration: underline;}
+.text-link-small { font-family: var(--font-sans); font-size: 14px; line-height: normal; font-weight: 400; letter-spacing: 0; text-decoration: underline;}
+.text-nickname-1 { font-family: var(--font-sans); font-size: 16px; line-height: 160%; font-weight: 600; letter-spacing: 0; }
+.text-nickname-2 { font-family: var(--font-sans); font-size: 14px; line-height: 160%; font-weight: 600; letter-spacing: 0; }
+.text-nickname-3 { font-family: var(--font-sans); font-size: 12px; line-height: 160%; font-weight: 600; letter-spacing: 0; }
+.text-span4 { font-family: var(--font-sans); font-size: 16px; line-height: 24px; font-weight: 400; letter-spacing: 0; }
+.text-banner { font-family: var(--font-sans); font-size: 109.41px; line-height: 136px; font-weight: 600; letter-spacing: 0; }
+.text-gradient { background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent; }

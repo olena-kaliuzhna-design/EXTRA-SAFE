@@ -1,0 +1,99 @@
+/* EXTRA SAFE — base element recipes.
+   IMPORTANT: the Figma file contains foundations only (colours, type, effects, grids, logo) — no UI components.
+   These recipes are DERIVED from those tokens so Claude builds consistent UI. If real component designs appear later, they win.
+   Requires ../tokens/tokens.css. */
+
+*, *::before, *::after { box-sizing: border-box; }
+body.es, .es-root { margin: 0; font-family: var(--font-sans); background: var(--background); color: var(--foreground); -webkit-font-smoothing: antialiased; }
+.es-atmosphere { background: var(--bg-atmosphere); }
+/* atmosphere is a dark brand visual: keep it dark in both themes and use light text on it */
+
+/* ---------- Layout ---------- */
+.es-container { width: 100%; max-width: calc(var(--container-max) + 2 * var(--grid-margin)); margin-inline: auto; padding-inline: var(--grid-margin); }
+.es-grid { display: grid; grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr)); column-gap: var(--grid-gutter); }
+
+/* ---------- Button ---------- */
+.es-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  height: 48px; padding: 0 24px; border-radius: var(--radius-3); border: 1px solid transparent;
+  font-family: var(--font-sans); font-size: 16px; font-weight: 500; line-height: 1; /* Buttons/Medium */
+  cursor: pointer; text-decoration: none; white-space: nowrap; box-shadow: var(--shadow-button);
+  transition: background-color .15s ease, border-color .15s ease, color .15s ease, box-shadow .15s ease;
+}
+.es-btn--lg { height: 56px; padding: 0 32px; font-size: 18px; } /* Buttons/Large */
+.es-btn--sm { height: 36px; padding: 0 16px; font-size: 14px; border-radius: var(--radius-2); } /* Buttons/Small */
+.es-btn--primary { background: var(--primary-main); color: var(--primary-foreground); }
+.es-btn--primary:hover { background: var(--primary-light); }
+.es-btn--primary:active { background: var(--primary-dark); }
+.es-btn--secondary { background: var(--button-light); color: var(--foreground); border-color: var(--border); }
+.es-btn--secondary:hover, .es-btn--secondary:active { background: var(--button-dark); }
+.es-btn--outline { background: transparent; color: var(--foreground); border-color: var(--border-secondary); box-shadow: none; }
+.es-btn--outline:hover { background: var(--alpha-white); }
+.es-btn--ghost { background: transparent; color: var(--foreground); box-shadow: none; }
+.es-btn--ghost:hover { background: var(--icon-hover); }
+.es-btn--destructive { background: var(--destructive-main); color: var(--destructive-foreground); }
+.es-btn--destructive:hover { background: var(--destructive-light); }
+.es-btn--destructive:active { background: var(--destructive-dark); }
+.es-btn:disabled, .es-btn.is-disabled { background: var(--card-dark); color: var(--icon-disabled); border-color: transparent; box-shadow: none; cursor: not-allowed; }
+.es-btn:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+.es-icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: var(--radius-full); border: 0; background: transparent; color: var(--icon-primary); cursor: pointer; }
+.es-icon-btn:hover { background: var(--icon-hover); }
+.es-icon-btn:disabled { color: var(--icon-disabled); }
+
+/* ---------- Link ---------- */
+.es-link { color: var(--primary-light); text-decoration: underline; font-size: 16px; } /* Link Medium */
+.es-link--sm { font-size: 14px; }                                                     /* Link Small */
+.es-link:hover { color: var(--primary-dark); }
+
+/* ---------- Form field ---------- */
+.es-field { display: flex; flex-direction: column; gap: 8px; }
+.es-field__label { font-size: 14px; line-height: 20px; font-weight: 500; color: var(--foreground); } /* subtitle2/sm */
+.es-input {
+  height: 48px; padding: 0 16px; width: 100%; border-radius: var(--radius-3);
+  background: transparent; border: 1px solid var(--input); color: var(--foreground);
+  font-family: var(--font-sans); font-size: 16px; line-height: 22px; outline: none; /* body2/md */
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.es-input::placeholder { color: var(--helper); }
+.es-input:hover { border-color: var(--border-secondary); }
+.es-input:focus { border-color: var(--ring); box-shadow: 0 0 0 3px var(--alpha-green); }
+.es-field.is-error .es-input { border-color: var(--destructive-main); box-shadow: 0 0 0 3px var(--alpha-red); }
+.es-field__hint { font-size: 12px; line-height: 16px; color: var(--helper); }              /* caption */
+.es-field.is-error .es-field__hint { color: var(--destructive-main); }
+.es-input:disabled { background: var(--card-dark); color: var(--icon-disabled); border-color: var(--border); }
+
+/* ---------- Card / panel ---------- */
+.es-card { background: var(--card-secondary); color: var(--foreground); border: 1px solid var(--border); border-radius: var(--radius-4); padding: 24px; }
+.es-card--glow { box-shadow: var(--shadow-card); }
+.es-card--gradient-border { border: 1px solid transparent; background: linear-gradient(var(--card-secondary), var(--card-secondary)) padding-box, var(--gradient-stroke) border-box; }
+.es-card__title { margin: 0 0 8px; }
+.es-card__text { margin: 0; color: var(--helper); }
+
+/* ---------- Badge / chip ---------- */
+.es-badge { display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 12px; border-radius: var(--radius-full); font-size: 12px; line-height: 16px; letter-spacing: 1px; text-transform: uppercase; /* overline */ background: var(--alpha-green); color: var(--primary-light); } /* primary-light: in light theme primary-main (#92E9C4) is too pale for text */
+.es-badge--blue { background: var(--es-secondary-alpha-10); color: var(--secondary-main); }
+.es-badge--red { background: var(--alpha-red); color: var(--destructive-light); }
+.es-badge--neutral { background: var(--alpha-white); color: var(--foreground); }
+
+/* ---------- Header (effect style "header") ---------- */
+.es-header { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 72px; padding-inline: var(--grid-margin); background: var(--background); box-shadow: var(--shadow-header); }
+.es-header__logo { display: flex; color: var(--foreground); }
+.es-header__logo svg { height: 28px; width: auto; }
+.es-header__nav { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; }
+.es-header__nav a { color: var(--foreground); text-decoration: none; font-size: 16px; font-weight: 500; }
+.es-header__nav a:hover { color: var(--primary-main); }
+@media (max-width: 767px) { .es-header { gap: 12px; height: 60px; } .es-header__nav { display: none; } .es-header__logo svg { height: 18px; } }
+
+/* ---------- Chat (EXTRA SAFE.chat app: nickname styles, "messege left" shadow, *-app text styles) ---------- */
+.es-chat { display: flex; flex-direction: column; gap: 12px; }
+.es-msg { max-width: min(560px, 80%); padding: 10px 14px; border-radius: var(--radius-4); font-size: 16px; line-height: 160%; font-weight: 300; } /* body2/app */
+.es-msg--in { align-self: flex-start; background: var(--card-secondary); color: var(--foreground); border-bottom-left-radius: var(--radius-1); box-shadow: var(--shadow-message-left); }
+[data-theme="light"] .es-msg--in { box-shadow: var(--shadow-feedback); } /* Figma shadow 'messege left' is designed for dark UI */
+.es-msg--out { align-self: flex-end; background: var(--primary-main); color: var(--primary-foreground); border-bottom-right-radius: var(--radius-1); }
+.es-msg__nick { display: block; font-size: 14px; line-height: 160%; font-weight: 600; color: var(--secondary-main); text-shadow: var(--shadow-nickname); } /* Nickname 2 */
+.es-msg__time { display: block; margin-top: 2px; font-size: 12px; line-height: 160%; font-weight: 300; opacity: .7; text-align: right; } /* caption-app */
+
+/* ---------- Modal / cookie banner ---------- */
+.es-modal { background: var(--card-secondary); color: var(--foreground); border-radius: var(--radius-5); padding: 32px; max-width: 480px; box-shadow: var(--shadow-cookie); }
+.es-modal__title { margin: 0 0 12px; font-size: var(--text-modal-title-size); line-height: var(--text-modal-title-lh); font-weight: var(--text-modal-title-weight); }
+.es-overlay { position: fixed; inset: 0; background: var(--alpha); }
