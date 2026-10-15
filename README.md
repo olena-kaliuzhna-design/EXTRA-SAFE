@@ -6,12 +6,16 @@ No build step: open `index.html` in a browser, or publish the repo with GitHub P
 
 ## Structure
 
+All files sit in the repo root (no folders), so they can be uploaded through the GitHub web interface as-is.
+
 ```
-index.html              page markup, 10 sections + header/footer
-assets/css/tokens.css   design tokens (colors, type scale, spacing, radii, Dark/Light themes, breakpoints)
-assets/css/main.css     layout and components
-assets/js/main.js       sticky header state, mobile menu, FAQ accordion
-assets/svg/             logo, App Store and Google Play badges
+index.html        page markup, 10 sections + header/footer
+tokens.css        design tokens (colors, type scale, spacing, radii, Dark/Light themes, breakpoints)
+main.css          layout and components
+main.js           sticky header state, mobile menu, FAQ accordion
+logo.svg          EXTRA SAFE logo
+app-store.svg     App Store badge
+google-play.svg   Google Play badge
 ```
 
 ## Sections
@@ -47,7 +51,7 @@ Light/dark alternation is controlled by the `.theme-dark` / `.theme-light` class
 
 ## To do
 
-- [ ] Images are loaded from `https://www.extrasafe.chat/content-media/home/…`. Move them into `assets/img/` if the repo should be self-contained.
+- [ ] Images are loaded from `https://www.extrasafe.chat/content-media/home/…`. Upload them to the repo root and update the `src` paths if the repo should be self-contained.
 - [ ] Replace the Private Balances visual with the brief's visual: the masked `***` balance next to a block-explorer view with the amount hidden.
 - [ ] Replace the hero desktop-app mock with a real desktop-app screenshot when one exists.
 - [ ] Replace the QR placeholder in the Final CTA with a real QR code for the download link.
