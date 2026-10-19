@@ -1,6 +1,6 @@
 // EXTRA SAFE — Landing 4.0
 // 1) Sticky header gets a border/shadow once the page is scrolled
-// 2) Mobile menu toggle (burger)
+// 2) Mobile menu toggle (only if a burger menu is added to the header)
 // 3) FAQ: keep one answer open at a time
 
 (function () {

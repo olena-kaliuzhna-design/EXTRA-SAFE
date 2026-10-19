@@ -21,36 +21,17 @@
   <!-- ============================== HEADER (sticky) ============================== -->
   <header class="site-header theme-dark" id="top">
     <div class="container header__inner">
-      <a class="header__logo" href="https://www.extrasafe.chat/" aria-label="EXTRA SAFE — home">
+      <a class="header__logo" href="#top" aria-label="EXTRA SAFE — home">
         <img src="logo.svg" alt="EXTRA SAFE" width="219" height="30" />
       </a>
-
-      <nav class="header__nav" aria-label="Main">
-        <a href="https://www.extrasafe.chat/download">Download</a>
-        <a href="#chat" class="has-caret">Chat</a>
-        <a href="#wallet" class="has-caret">Wallet</a>
-        <a href="#faq" class="has-caret">Resources</a>
-      </nav>
-
       <div class="header__actions">
-        <a class="btn btn--outline btn--sm header__meeting" href="https://www.extrasafe.chat/meeting">Start a Meeting</a>
-        <a class="btn btn--primary btn--sm header__get" href="https://www.extrasafe.chat/download">
-          <svg class="icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Get the App
-        </a>
-        <button class="header__burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        </button>
+        <nav class="lang-switch" aria-label="Language">
+          <a href="#top" lang="en" class="is-active" aria-current="true">EN</a>
+          <a href="#top" lang="hi">हिन्दी</a>
+        </nav>
+        <a class="btn btn--primary btn--sm" href="#download">Download</a>
       </div>
     </div>
-
-    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile" hidden>
-      <a href="https://www.extrasafe.chat/download">Download</a>
-      <a href="#chat">Chat</a>
-      <a href="#wallet">Wallet</a>
-      <a href="#faq">Resources</a>
-      <a href="https://www.extrasafe.chat/meeting">Start a Meeting</a>
-    </nav>
   </header>
 
   <main id="main">
@@ -59,61 +40,63 @@
     <section class="section section--hero theme-dark" aria-labelledby="hero-title">
       <div class="container hero">
         <div class="hero__copy">
-          <h1 class="h1" id="hero-title">
-            Send Tokenized <span class="highlight">Dollars</span> in&nbsp;Chat
-          </h1>
+          <h1 class="h1" id="hero-title">Send Tokenized <span class="highlight">Dollars</span> in&nbsp;Chat</h1>
           <p class="body-l text-secondary">A privacy-first encrypted messenger with a built-in self-custodial stablecoin wallet.</p>
           <div class="store-badges">
             <a class="store-badge" href="https://apps.apple.com/app/id6745936574"><img src="app-store.svg" alt="Download on the App Store" width="180" height="52" /></a>
             <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.extrasafe.chat.app"><img src="google-play.svg" alt="Get it on Google Play" width="180" height="52" /></a>
             <a class="store-badge store-badge--desktop" href="https://www.extrasafe.chat/download">
               <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 20h8M12 16v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-              <span class="store-badge__text"><small>DOWNLOAD FOR</small><strong>Desktop</strong></span>
-              <span class="tag-new">NEW</span>
+              <span class="store-badge__text"><small>Download for</small><strong>Desktop</strong></span>
             </a>
           </div>
         </div>
 
-        <!-- Desktop: desktop-app product shot (in-chat transfer card + ₹ INR toggle) -->
-        <div class="app-window" aria-label="EXTRA SAFE desktop app: in-chat transfer with INR view" role="img">
-          <div class="app-window__bar"><i></i><i></i><i></i><span>EXTRA SAFE</span></div>
-          <div class="app-window__body">
-            <aside class="app-window__sidebar">
-              <div class="chat-row is-active"><b class="avatar avatar--accent">PR</b><div><strong>Priya</strong><span>Here is the payment…</span></div></div>
-              <div class="chat-row"><b class="avatar">MX</b><div><strong>Max</strong><span>Got it! Thanks</span></div></div>
-              <div class="chat-row"><b class="avatar">IH</b><div><strong>Insiders Hub</strong><span>New build is live</span></div></div>
-              <div class="chat-row"><b class="avatar">MI</b><div><strong>Mia</strong><span>ok ok, sending my share</span></div></div>
-            </aside>
-            <div class="app-window__chat">
-              <div class="chat-head">
-                <div><strong>Priya</strong><span class="online">online</span></div>
-                <div class="currency-toggle"><span>$ USD</span><span class="is-active">₹ INR</span></div>
-              </div>
-              <div class="chat-balance">Balance ≈ ₹12,540.00</div>
-              <div class="chat-msgs">
-                <div class="bubble bubble--in">Video call ended · 2:14</div>
-                <div class="bubble bubble--out">Here is the payment for the video! 🎬</div>
-                <div class="transfer-card transfer-card--sent align-end">
-                  <div class="transfer-card__body">
-                    <div class="transfer-card__head"><span>Sent</span><span class="status">Completed ✓</span></div>
-                    <div class="transfer-card__amount"><b class="token">₮</b><div><strong>150</strong><span>USDt</span></div><time>11:39</time></div>
-                  </div>
-                  <div class="transfer-card__foot">Show transaction details ↗</div>
+        <!-- Desktop: product shot. TODO: real photo (Indian family, a real life moment) + desktop app screenshot (chat with transfer card, ₹ INR toggle visible) -->
+        <div class="hero__visual" role="img" aria-label="EXTRA SAFE desktop app: chat with a transfer card and the ₹ INR toggle">
+          <div class="app-window">
+            <div class="app-window__bar"><i></i><i></i><i></i><span>EXTRA SAFE</span></div>
+            <div class="app-window__body">
+              <aside class="app-window__sidebar">
+                <div class="chat-row is-active"><b class="avatar avatar--accent">M</b><div><strong>Mom</strong><span>Thank you!</span></div></div>
+                <div class="chat-row"><b class="avatar">D</b><div><strong>Dad</strong><span>Video call</span></div></div>
+                <div class="chat-row"><b class="avatar">S</b><div><strong>Sofia</strong><span>Gift Funded!</span></div></div>
+              </aside>
+              <div class="app-window__chat">
+                <div class="chat-head">
+                  <div><strong>Mom</strong><span class="online">Video call</span></div>
+                  <span class="timer-chip">1 Month</span>
                 </div>
-                <div class="bubble bubble--in">Got it! 🙌 Thanks so much!</div>
+                <div class="chat-msgs">
+                  <p class="e2e-note">This chat is E2E encrypted using asymmetric cryptography. Only you and your recipient can read the messages.</p>
+                  <div class="bubble bubble--in">Look at her! She's grown so much</div>
+                  <div class="bubble bubble--out">Sending this month's transfer. Tell dad too.</div>
+                  <div class="transfer-card align-end">
+                    <div class="transfer-card__body">
+                      <div class="transfer-card__head"><span>Sent</span><span class="status">Completed</span></div>
+                      <div class="transfer-card__amount"><b class="token">₮</b><div><strong>250</strong><span>USDT</span></div></div>
+                    </div>
+                    <div class="transfer-card__foot">Show transaction details</div>
+                  </div>
+                  <div class="bubble bubble--in">Thank you!</div>
+                </div>
+                <div class="chat-composer">Message</div>
               </div>
-              <div class="chat-composer">Message</div>
             </div>
+          </div>
+          <div class="wallet-card">
+            <div class="wallet-card__head"><span class="label">EXTRA WALLET</span><span class="net-chip">Avalanche C</span></div>
+            <div class="currency-toggle"><span class="is-active">$ USD</span><span>₹ INR</span></div>
+            <strong class="wallet-card__balance">$2,500.00</strong>
           </div>
         </div>
 
-        <!-- Mobile: mobile product shot -->
         <img class="hero__phone" src="https://www.extrasafe.chat/content-media/home/hero_101b2a8c22.png" alt="EXTRA SAFE mobile app with an in-chat stablecoin transfer" width="427" height="412" loading="eager" />
       </div>
     </section>
 
     <!-- ============================== 02 SIGNATURE FLOW (light) ============================== -->
-    <section class="section theme-light" id="chat" aria-labelledby="flow-title">
+    <section class="section theme-light" aria-labelledby="flow-title">
       <div class="container stack">
         <header class="section-head">
           <span class="pill">Transaction Flow</span>
@@ -121,193 +104,206 @@
         </header>
 
         <ol class="grid-3 steps">
-          <li class="card card--surface">
-            <div class="feature-item"><span class="num">1</span><div><h3 class="h4">Call to confirm</h3><p>A quick in-chat call confirms whom you're sending your stablecoins to.</p></div></div>
-            <img class="media" src="https://www.extrasafe.chat/content-media/home/1_fd9d7055bb.png" alt="In-chat video call in EXTRA SAFE" loading="lazy" />
-          </li>
-          <li class="card card--surface">
-            <div class="feature-item"><span class="num">2</span><div><h3 class="h4">Send the stablecoins</h3><p>Picking the asset from the attachment menu starts the transfer.</p></div></div>
-            <img class="media" src="https://www.extrasafe.chat/content-media/home/22_a7f98fb0c7.png" alt="Attachment menu with stablecoins" loading="lazy" />
-          </li>
-          <li class="card card--surface">
-            <div class="feature-item"><span class="num">3</span><div><h3 class="h4">Check the status</h3><p>The status shows up in the same dialogue – completed in seconds.</p></div></div>
-            <div class="media media--chat">
-              <div class="bubble bubble--out">Sending now 👇</div>
-              <div class="transfer-card transfer-card--sent">
-                <div class="transfer-card__body">
-                  <div class="transfer-card__head"><span>Sent</span><span class="status">Completed ✓</span></div>
-                  <div class="transfer-card__amount"><b class="token">₮</b><div><strong>150</strong><span>USDt</span></div><time>11:39</time></div>
-                </div>
-                <div class="transfer-card__foot">Show transaction details ↗</div>
+          <li class="step-card">
+            <div class="ui-screen ui-call">
+              <b class="ui-call__avatar">M</b>
+              <strong>Mom</strong>
+              <span>Video call</span>
+              <div class="ui-call__controls" aria-hidden="true">
+                <i><svg width="18" height="18" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></i>
+                <i><svg width="18" height="18" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 10l5-3v10l-5-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></i>
+                <i class="is-end"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M3 14c5-5 13-5 18 0l-2.5 2.5-3-2v-2.5a10 10 0 0 0-7 0V14l-3 2z" fill="currentColor"/></svg></i>
               </div>
             </div>
+            <div class="step-card__text"><span class="num">1</span><p>A quick in-chat call confirms whom you're sending your stablecoins to.</p></div>
+          </li>
+          <li class="step-card">
+            <div class="ui-screen ui-menu">
+              <span><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 16l5-5 4 4 3-3 6 6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Image</span>
+              <span><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l5 5v13H6z M14 3v5h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>File</span>
+              <span class="is-active"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Send USDT</span>
+              <span><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Send ETH</span>
+            </div>
+            <div class="step-card__text"><span class="num">2</span><p>Picking the asset from the attachment menu starts the transfer.</p></div>
+          </li>
+          <li class="step-card">
+            <div class="ui-screen ui-chat">
+              <div class="bubble bubble--out">Sending this month's transfer.</div>
+              <div class="transfer-card">
+                <div class="transfer-card__body">
+                  <div class="transfer-card__head"><span>Sent</span><span class="status">Completed</span></div>
+                  <div class="transfer-card__amount"><b class="token">₮</b><div><strong>250</strong><span>USDT</span></div></div>
+                </div>
+              </div>
+              <div class="bubble bubble--in">Thank you!</div>
+            </div>
+            <div class="step-card__text"><span class="num">3</span><p>The status shows up in the same dialogue – completed in seconds.</p></div>
           </li>
         </ol>
 
-        <p class="body-l text-secondary italic">Call to confirm, send the stablecoins, check the status. All in the same chat.</p>
+        <p class="h4 flow-summary">Call to confirm, send the stablecoins, check the status. All in the same chat.</p>
       </div>
     </section>
 
     <!-- ============================== 03 FEATURE ROW (dark) ============================== -->
-    <section class="section theme-dark" id="wallet" aria-labelledby="wallet-title">
+    <section class="section theme-dark" aria-labelledby="wallet-title">
       <div class="container stack">
         <header class="section-head">
           <span class="pill">Built-in Wallet</span>
           <h2 class="h2" id="wallet-title">As Natural as Sending a Message</h2>
         </header>
 
-        <div class="transfer-banner" role="img" aria-label="Sent 150 USDt and received 150 USDt, gas paid in the same asset">
-          <div class="transfer-banner__side">
-            <b class="avatar avatar--lg">RK</b>
-            <div class="transfer-card transfer-card--sent">
-              <div class="transfer-card__body">
-                <div class="transfer-card__head"><span>Sent</span><span class="status">Completed ✓</span></div>
-                <div class="transfer-card__amount"><b class="token">₮</b><div><strong>150</strong><span>USDt</span></div><time>11:39</time></div>
-              </div>
-              <div class="transfer-card__foot">Show transaction details ↗</div>
-            </div>
-          </div>
-          <div class="transfer-banner__link"><i></i><i></i><i></i><b>✓</b><i></i><i></i><i></i></div>
-          <div class="transfer-banner__side">
-            <b class="avatar avatar--lg avatar--right">PS</b>
-            <div class="transfer-card transfer-card--received">
-              <div class="transfer-card__body">
-                <div class="transfer-card__head"><span>Received</span><span class="status">Completed ✓</span></div>
-                <div class="transfer-card__amount"><b class="token">₮</b><div><strong>150</strong><span>USDt</span></div><time>09:20</time></div>
-              </div>
-              <div class="transfer-card__foot">Show transaction details ↗</div>
-            </div>
-          </div>
-          <span class="chip chip--accent transfer-banner__gas">Gas: 0.03 USDt — paid in the same asset</span>
+        <div class="feature-grid">
+          <article class="card feature-card">
+            <span class="icon-badge" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+            <h3 class="h4">Send to a Contact, Not to an Address</h3>
+            <p class="text-secondary">In a chat, just send — you already know who you're talking to. From the Wallet, send to an EXTRA SAFE number or scan a QR code.</p>
+            <div class="tags"><span class="tag tag--strong">Mom</span><span class="tag">849269155</span></div>
+          </article>
+          <article class="card feature-card">
+            <span class="icon-badge" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+            <h3 class="h4">Gas Paid With Stablecoins</h3>
+            <p class="text-secondary">The fee settles in the same asset you send. One asset covers the payment and the gas.</p>
+            <div class="tags"><span class="tag tag--strong">Payment · USDT</span><span class="tag">Gas · USDT</span></div>
+          </article>
+          <article class="card feature-card">
+            <span class="icon-badge" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span>
+            <h3 class="h4">Your Whole Wallet, in Your Currency</h3>
+            <p class="text-secondary">Your funds, in your currency. One tap switches the whole wallet.</p>
+            <div class="currency-toggle currency-toggle--light"><span>$ USD</span><span class="is-active">₹ INR</span></div>
+          </article>
+          <article class="card feature-card feature-card--wide">
+            <span class="icon-badge" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 6 0l3-3a4 4 0 0 0-6-6l-1 1M14 10a4 4 0 0 0-6 0l-3 3a4 4 0 0 0 6 6l1-1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+            <h3 class="h4">Six Chains, One Recovery Phrase</h3>
+            <p class="text-secondary">Avalanche as default blockchain, with Ethereum, BNB Chain, Arbitrum, Base and Polygon — one recovery phrase covers all six.</p>
+            <div class="tags"><span class="tag tag--accent">Avalanche</span><span class="tag">Ethereum</span><span class="tag">BNB Chain</span><span class="tag">Arbitrum</span><span class="tag">Base</span><span class="tag">Polygon</span></div>
+          </article>
         </div>
 
-        <div class="grid-2">
-          <article class="card">
-            <div class="feature-item"><span class="num">1</span><div><h3 class="h4">Send to a Contact, Not to an Address</h3><p>In a chat, just send — you already know who you're talking to. From the Wallet, send to an EXTRA SAFE number or scan a QR code.</p></div></div>
-            <img class="media" src="https://www.extrasafe.chat/content-media/home/closed-beta-wallet.png" alt="Sending from the Wallet to an EXTRA SAFE number" loading="lazy" />
-          </article>
-          <article class="card">
-            <div class="feature-item"><span class="num">2</span><div><h3 class="h4">Gas Paid With Stablecoins</h3><p><span class="text-accent">The fee settles in the same asset</span> you send. One asset covers the payment and the gas.</p></div></div>
-            <img class="media" src="https://www.extrasafe.chat/content-media/home/closed-beta-gasless.png" alt="Send, pay gas and receive in the same stablecoin" loading="lazy" />
-          </article>
-          <article class="card">
-            <div class="feature-item"><span class="num">3</span><div><h3 class="h4">Your Whole Wallet, in Your Currency</h3><p>Your funds, in your currency. One tap switches the whole wallet.</p></div></div>
-            <div class="media media--inr">
-              <div class="currency-toggle"><span>$ USD</span><span class="is-active">₹ INR</span></div>
-              <strong>₹12,540.00</strong>
-              <span>INR view — the whole wallet in rupees, one tap</span>
-            </div>
-          </article>
-          <article class="card">
-            <div class="feature-item"><span class="num">4</span><div><h3 class="h4">Six Chains, One Recovery Phrase</h3><p><span class="text-accent">Avalanche as default blockchain, with Ethereum, BNB Chain, Arbitrum, Base and Polygon — one recovery phrase covers all six.</span></p></div></div>
-            <div class="media media--chains">
-              <ul class="chains">
-                <li style="--c:#E84142">Avalanche · default</li>
-                <li style="--c:#627EEA">Ethereum</li>
-                <li style="--c:#F3BA2F">BNB Chain</li>
-                <li style="--c:#28A0F0">Arbitrum</li>
-                <li style="--c:#0052FF">Base</li>
-                <li style="--c:#8247E5">Polygon</li>
-              </ul>
-            </div>
-          </article>
+        <div class="get-app get-app--start">
+          <span class="h4">Get the app</span>
+          <div class="store-badges">
+            <a class="store-badge" href="https://apps.apple.com/app/id6745936574"><img src="app-store.svg" alt="Download on the App Store" width="180" height="52" /></a>
+            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.extrasafe.chat.app"><img src="google-play.svg" alt="Get it on Google Play" width="180" height="52" /></a>
+            <a class="store-badge store-badge--desktop" href="https://www.extrasafe.chat/download">
+              <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 20h8M12 16v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              <span class="store-badge__text"><small>Download for</small><strong>Desktop</strong></span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ============================== 04 PRIVATE BALANCES (light) ============================== -->
     <section class="section theme-light" aria-labelledby="pb-title">
-      <div class="container split">
+      <div class="container split split--top">
         <div class="split__copy">
           <span class="pill">Private Balances</span>
           <h2 class="h2" id="pb-title">Private From the Public, Provable When It Counts</h2>
-          <p class="text-secondary">On most chains, a stablecoin transfer sits on a public ledger forever — amount, address, all of it, visible to anyone. Private Balances, built on Avalanche's eERC standard, use zero-knowledge proofs to keep the amount hidden, even while it's just sitting in the wallet.</p>
-          <p class="text-secondary">Convert any stablecoin to its private version in a few taps, from the Wallet tab on the Avalanche network. The balance shows as asterisks; biometrics reveal it, then it hides again. Who you're paying still shows on-chain. How much – never does.</p>
-          <blockquote class="highlight-box">
-            <p class="body-l">eERC makes balances and payments private, while staying provable for anyone entitled to check.</p>
-            <p class="text-accent italic">Private balances &amp; transfer amounts, eERC by Avalanche.</p>
-          </blockquote>
-          <a class="btn btn--outline" href="#">Learn more</a>
+          <p class="body-l text-secondary">On most chains, a stablecoin transfer sits on a public ledger forever — amount, address, all of it, visible to anyone. Private Balances, built on Avalanche's eERC standard, use zero-knowledge proofs to keep the amount hidden, even while it's just sitting in the wallet.</p>
+          <p class="body-l text-secondary">Convert any stablecoin to its private version in a few taps, from the Wallet tab on the Avalanche network. The balance shows as asterisks; biometrics reveal it, then it hides again. Who you're paying still shows on-chain. How much – never does.</p>
+          <p class="body-l strong">eERC makes balances and payments private, while staying provable for anyone entitled to check.</p>
+          <p class="text-accent strong">Private balances &amp; transfer amounts, eERC by Avalanche.</p>
+          <a class="btn btn--ghost" href="#">Learn more <span aria-hidden="true">→</span></a>
         </div>
-        <!-- TODO: replace with brief visual — *** masked balance beside a block-explorer view where the amount does not appear -->
-        <img class="split__media" src="https://www.extrasafe.chat/content-media/home/private-balances-transfer-amounts.png" alt="Private balance shown as asterisks in the EXTRA SAFE wallet" loading="lazy" />
+
+        <div class="pb-visual" role="img" aria-label="Wallet shows private balances as asterisks; the block explorer shows the transfer without the amount">
+          <div class="ui-panel">
+            <span class="label">WALLET</span>
+            <span class="ui-panel__sub">Private Balances</span>
+            <div class="ui-row"><b class="token">₮</b><strong>esUSDT</strong><span class="mask">***</span><span class="eye" aria-hidden="true"></span></div>
+            <div class="ui-row"><b class="token token--avax">A</b><strong>esAVAX</strong><span class="mask">***</span><span class="eye" aria-hidden="true"></span></div>
+          </div>
+          <div class="ui-panel">
+            <span class="label">BLOCK EXPLORER</span>
+            <dl class="ui-list">
+              <div><dt>Status</dt><dd class="text-ok">Confirmed</dd></div>
+              <div><dt>From</dt><dd>0xdk…js09</dd></div>
+              <div><dt>To</dt><dd>0x3b…77e2</dd></div>
+              <div><dt>Network</dt><dd>Avalanche C</dd></div>
+            </dl>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- ============================== 05 GIFT LINK (dark) ============================== -->
     <section class="section theme-dark" aria-labelledby="gift-title">
-      <div class="container split split--reverse">
+      <div class="container split">
         <div class="split__copy">
-          <span class="pill">Gift Link</span>
           <h2 class="h2" id="gift-title">Gift Stablecoins to Someone Who Isn't on EXTRA SAFE Yet</h2>
-          <p class="body-l text-secondary">Gift stablecoins as a link or a QR code. They open it, install the app, and the funds are already inside their new wallet. <span class="text-accent">Usable from day one, no additional crypto required.</span></p>
-          <p class="text-secondary">The gift stays revocable until it's claimed — pull it back any time before then.</p>
-          <ol class="flow" aria-label="How a Gift Link works">
-            <li class="chip">Link / QR</li>
-            <li class="chip">Install the app</li>
-            <li class="chip chip--solid">Wallet funded ✓</li>
-          </ol>
-          <a class="btn btn--outline" href="https://www.extrasafe.chat/gift-link">Learn more</a>
+          <p class="body-l text-secondary">Gift stablecoins as a link or a QR code. They open it, install the app, and the funds are already inside their new wallet. Usable from day one, no additional crypto required.</p>
+          <p class="body-l text-secondary">The gift stays revocable until it's claimed — pull it back any time before then.</p>
+          <a class="btn btn--ghost" href="https://www.extrasafe.chat/gift-link">Learn more <span aria-hidden="true">→</span></a>
         </div>
-        <img class="split__media" src="https://www.extrasafe.chat/content-media/home/24_922d8e4b6f.png" alt="Gift Link QR code that opens a funded wallet" loading="lazy" />
+
+        <div class="gift-visual" role="img" aria-label="Gift link with QR code turns into a new funded wallet">
+          <div class="ui-panel gift-card">
+            <span class="gift-card__check" aria-hidden="true">✓</span>
+            <strong>Gift Funded!</strong>
+            <span class="text-muted">18 USD₮ for Sofia</span>
+            <span class="qr__code" aria-hidden="true"></span>
+            <span class="btn btn--primary btn--sm btn--block">Share Gift Link</span>
+          </div>
+          <span class="gift-visual__arrow" aria-hidden="true">→</span>
+          <div class="ui-panel">
+            <div class="wallet-card__head"><span class="label">EXTRA WALLET</span><span class="new-chip">New</span></div>
+            <strong class="wallet-card__balance">$18.00</strong>
+            <div class="ui-row ui-row--top"><b class="token">₮</b><strong>USDT</strong><span>18.00</span></div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- ============================== 06 SECURITY (light) ============================== -->
     <section class="section theme-light" aria-labelledby="sec-title">
-      <div class="container split">
-        <div class="split__copy">
-          <span class="pill">Security</span>
-          <h2 class="h2" id="sec-title">You Own and Control Your Assets and Chats</h2>
-          <ul class="points">
-            <li class="feature-item"><span class="num">1</span><div><h3 class="h4">Self-custodial</h3><p>Your private keys are generated on the device and never leave it — nobody at EXTRA SAFE can freeze the funds or read the chats.</p></div></li>
-            <li class="feature-item"><span class="num">2</span><div><h3 class="h4">Pick a name, get an EXTRA SAFE number</h3><p>The identity is wallet-based, created right on the device.</p></div></li>
-            <li class="feature-item"><span class="num">3</span><div><h3 class="h4">Your 12-word Recovery Phrase</h3><p>The only way to restore your wallet, chats, and contacts if you switch devices or lose access. Copy it yourself and store it wherever you trust, or save an encrypted, password-protected backup to Google Drive or iCloud.</p></div></li>
-          </ul>
+      <div class="container stack">
+        <h2 class="h2" id="sec-title">You Own and Control Your Assets and Chats</h2>
+        <div class="grid-3">
+          <article class="card sec-card">
+            <span class="icon-badge" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11 12l8-8M16 7l2 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+            <p><strong>Self-custodial.</strong> Your private keys are generated on the device and never leave it — nobody at EXTRA SAFE can freeze the funds or read the chats.</p>
+          </article>
+          <article class="card sec-card">
+            <span class="icon-badge" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 21a8 8 0 0 1 16 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+            <p><strong>Pick a name, get an EXTRA SAFE number.</strong> The identity is wallet-based, created right on the device.</p>
+            <span class="tag tag--number">849269155</span>
+          </article>
+          <article class="card sec-card">
+            <span class="icon-badge" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+            <p><strong>Your 12-word Recovery Phrase</strong> is the only way to restore your wallet, chats, and contacts if you switch devices or lose access. Copy it yourself and store it wherever you trust, or save an encrypted, password-protected backup to Google Drive or iCloud.</p>
+            <ol class="phrase" aria-label="12-word recovery phrase, hidden">
+              <li>1 ••••</li><li>2 ••••</li><li>3 ••••</li><li>4 ••••</li><li>5 ••••</li><li>6 ••••</li>
+              <li>7 ••••</li><li>8 ••••</li><li>9 ••••</li><li>10 ••••</li><li>11 ••••</li><li>12 ••••</li>
+            </ol>
+          </article>
         </div>
-        <figure class="identity-card theme-dark">
-          <figcaption>
-            <h3 class="h3">Built on Cryptographic Identity</h3>
-            <p class="text-secondary">Your EXTRA SAFE number is your identity everywhere — backed by a key pair generated on your device.</p>
-          </figcaption>
-          <img src="https://www.extrasafe.chat/content-media/home/21_1b84156b2d.png" alt="12-word recovery phrase screen" loading="lazy" />
-        </figure>
       </div>
     </section>
 
     <!-- ============================== 07 FEES (dark) ============================== -->
     <section class="section theme-dark" aria-labelledby="fees-title">
-      <div class="container split split--center">
+      <div class="container split split--top">
         <div class="split__copy">
-          <span class="pill">Fees</span>
           <h2 class="h2" id="fees-title">The Fee Breakdown</h2>
           <p class="body-l text-secondary">Every transfer shows its full cost — the service fee and the network gas — before you confirm.</p>
-          <!-- Variant A (зведена цифра). Variant B: Swapping → "The sending fee, plus a 0.25% EXTRA SAFE fee and a 0.20% routing fee." -->
-          <dl class="fee-table">
-            <div><dt>Sending</dt><dd>$0.05 + 0.1% of the amount, plus gas at the exact amount used.</dd></div>
-            <div><dt>Swapping</dt><dd>The sending fee, plus 0.45% for swapping to a different asset.</dd></div>
-            <div><dt>Gift Link</dt><dd>The sending fee, charged once when you send and once when it's claimed, plus a small gift fee.</dd></div>
-          </dl>
+          <a class="link-arrow" href="#">Learn more about fees <span aria-hidden="true">→</span></a>
         </div>
-
-        <div class="confirm-sheet" role="img" aria-label="Confirmation screen showing the full fee breakdown before sending">
-          <h3 class="h4">Confirm transfer</h3>
-          <div class="confirm-sheet__to"><b class="avatar">PR</b><div><strong>To: Priya</strong><span>EXTRA SAFE № 482 913 607</span></div></div>
-          <div class="confirm-sheet__row"><span>Amount</span><span>150.00 USDt</span></div>
-          <div class="confirm-sheet__row"><span>Service fee ($0.05 + 0.1%)</span><span>0.20 USDt</span></div>
-          <div class="confirm-sheet__row"><span>Network gas</span><span>0.03 USDt</span></div>
-          <div class="confirm-sheet__row is-total"><span>Total</span><span>150.23 USDt</span></div>
-          <span class="btn btn--primary btn--block">Confirm &amp; Send</span>
-        </div>
+        <dl class="fee-table">
+          <div><dt>Sending</dt><dd>$0.05 + 0.1% of the amount, plus gas at the exact amount used.</dd></div>
+          <!-- Variant A is shown. Variant B: "The sending fee, plus a 0.25% EXTRA SAFE fee and a 0.20% routing fee." -->
+          <div><dt>Swapping to a different asset</dt><dd>The sending fee, plus 0.45% for the swap.</dd></div>
+          <div><dt>Gift Link</dt><dd>The sending fee, charged once when you send and once when it's claimed, plus a small gift fee.</dd></div>
+        </dl>
       </div>
     </section>
 
-    <!-- ============================== 08 PROOF STRIP + INSIDERS (light) ============================== -->
+    <!-- ============================== 08 PROOF + COMMUNITY (light) ============================== -->
     <section class="section theme-light" aria-label="EXTRA SAFE in numbers">
       <div class="container stack">
         <ul class="stats">
-          <li><strong>500K+</strong><span>Downloads</span></li>
-          <li><strong>5.0 ★</strong><span>from 1.25K reviews</span></li>
+          <li><strong>500K+</strong><span>downloads</span></li>
+          <li><strong>5.0★</strong><span>from 1.25K reviews</span></li>
           <li><strong>5.8×</strong><span>organic growth in five months</span></li>
           <li><strong>9</strong><span>languages</span></li>
         </ul>
@@ -319,16 +315,14 @@
             <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.extrasafe.chat.app"><img src="google-play.svg" alt="Get it on Google Play" width="180" height="52" /></a>
             <a class="store-badge store-badge--desktop" href="https://www.extrasafe.chat/download">
               <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 20h8M12 16v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-              <span class="store-badge__text"><small>DOWNLOAD FOR</small><strong>Desktop</strong></span>
-              <span class="tag-new">NEW</span>
+              <span class="store-badge__text"><small>Download for</small><strong>Desktop</strong></span>
             </a>
           </div>
         </div>
 
         <article class="insiders theme-dark">
-          <img src="https://www.extrasafe.chat/content-media/home/insiders-hub-image.png" alt="Insiders Hub community in EXTRA SAFE" loading="lazy" />
+          <img src="https://www.extrasafe.chat/content-media/home/insiders-hub-image.png" alt="EXTRA SAFE Insiders Hub community" loading="lazy" />
           <div class="insiders__copy">
-            <span class="pill">Insiders Hub</span>
             <h2 class="h3 insiders__title">Curious What Ships Next?</h2>
             <p class="text-secondary">Join the Insiders Hub — our closed Telegram community. Get early access to new features and the closed testing community, a direct line to the EXTRA SAFE team, and a real say in what we build.</p>
             <a class="btn btn--primary" href="https://www.extrasafe.chat/beta-waitlist">Join</a>
@@ -342,11 +336,11 @@
       <div class="container faq">
         <div class="faq__intro">
           <h2 class="faq__title" id="faq-title">FAQs</h2>
-          <p class="text-secondary">Everything you need to know about the messenger with a stablecoin wallet built in.</p>
+          <p class="text-secondary">Everything you need to know about EXTRA SAFE.</p>
           <div class="faq__help">
             <h3 class="h3">Need more help?</h3>
-            <p class="text-secondary">Guides, troubleshooting and answers to everything else live in the Help Center.</p>
-            <a class="btn btn--primary" href="#">Visit the Help Center</a>
+            <p class="text-secondary">Learn about sending stablecoins and messaging in EXTRA SAFE Help Center.</p>
+            <a class="btn btn--primary" href="#">More</a>
           </div>
         </div>
 
@@ -356,36 +350,12 @@
             <p>EXTRA SAFE is a messenger with a stablecoin-first wallet built directly into it. Two things that usually live in separate apps, chat and a wallet, now sit in one place. "Self-custodial" is the part that matters most beneath that: the wallet's keys are generated on the device and never leave it, so the funds and conversations inside remain under the account holder's sole control. Nobody, not even EXTRA SAFE, can freeze the funds or access message history or contacts.</p>
           </details>
           <details>
-            <summary>Do I Need a Phone Number to Sign Up?</summary>
-            <p>Correct — neither one. An EXTRA SAFE identity is wallet-based instead: the account is created right on the device, tied to keys generated locally, with an EXTRA SAFE number as the visible ID other people use to find and add you. There's no phone number or email sitting on a server to check against in the first place.</p>
-          </details>
-          <details>
-            <summary>What's an EXTRA SAFE Number?</summary>
-            <p>It's a 9-digit number generated from the account's own cryptographic key pair the moment it's created, and it works two ways at once: as the contact address people use to find and add each other, and as the payment address contacts send funds to directly, with no wallet address involved. It stays the same across every device, as long as the recovery phrase is kept safe — similar to a bank account number, public enough to share, safe enough to double as an identity.</p>
-          </details>
-          <details>
-            <summary>How Is Sending Money in a Chat Different From a Regular Wallet?</summary>
+            <summary>How Is Sending Funds in a Chat Different From a Regular Wallet?</summary>
             <p>A few things, and they stack. Sending goes straight to a contact's EXTRA SAFE number instead of a copied wallet address, so there's no long string of characters to get right — the app automatically resolves the wallet behind that number. The transfer's status shows up right in the chat, just like a message, instead of a separate screen to check back on. And because it's a chat, a quick video call with that contact is right there too, an easy way to confirm a transfer is going to the right person before sending.</p>
-          </details>
-          <details>
-            <summary>Can I Send Stablecoins to Wallets Other Than EXTRA SAFE Contacts?</summary>
-            <p>Anywhere. Sending to a contact by name is the flow built for chat, but the Wallet tab supports sending to any external self-custodial wallet or exchange too, across every network EXTRA SAFE runs on.</p>
-          </details>
-          <details>
-            <summary>Do I Need a Native Network Coin to Pay Gas Fees?</summary>
-            <p>That's right — no native coin needed. Usually, sending any token requires holding a separate native coin to cover the fee, in addition to whatever's actually being sent. In EXTRA SAFE, that step disappears: every transfer runs through a smart account, which automatically converts a small slice of the stablecoin being sent into the fee itself, so there's nothing separate to hold or buy beforehand.</p>
           </details>
           <details>
             <summary>Can I Send Stablecoins to Someone Who Doesn't Have EXTRA SAFE Yet?</summary>
             <p>Yes, through a Gift Link. From the Wallet tab, pick a network and an amount, and EXTRA SAFE creates a link that's already funded and ready to share via WhatsApp, SMS, email, or Telegram. Tapping that link takes the recipient straight to the app download page. The moment they open it for the first time, a wallet is created automatically on their device, with the gifted funds already inside. And until it's actually claimed, the gift remains revocable, so the sender can pull the funds back at any time before that happens.</p>
-          </details>
-          <details>
-            <summary>Which Networks Does EXTRA SAFE Support?</summary>
-            <p>There are six supported networks in EXTRA SAFE. Avalanche is the default network, alongside Ethereum, Polygon, BNB Chain, Base, and Arbitrum.</p>
-          </details>
-          <details>
-            <summary>Who Has Access to Manage My Assets and Chats?</summary>
-            <p>Nobody but the account holder has ownership and control over decentralized assets and chats. Private keys are generated on-device and never leave it, which is what makes the wallet self-custodial: EXTRA SAFE itself has no ability to move funds, freeze an account, or read a chat.</p>
           </details>
           <details>
             <summary>Can I Restore My Account on a New Device?</summary>
@@ -395,46 +365,23 @@
             <summary>Are My Chats Encrypted?</summary>
             <p>Every message, file, image, and voice note sent through EXTRA SAFE is end-to-end encrypted and readable only on the device it's meant for, not on a server in between. Chats don't just stay there forever, either. Once a contact has actually seen something, it clears on its own, on a timer that can run anywhere from one minute to a full month, whatever fits the conversation.</p>
           </details>
-          <details>
-            <summary>Can Anyone See My Balance or Transaction Amounts?</summary>
-            <p>With <span class="text-accent">Private Balances</span>, your balance and transfer amounts stay invisible to the general public. The feature is built on eERC by Avalanche, a standard designed specifically for this purpose, currently live in EXTRA SAFE on the Avalanche network.</p>
-          </details>
-          <details>
-            <summary>Where Are My Private Keys Stored?</summary>
-            <p>The keys – public and private – are generated locally when a wallet is set up; the private key always stays on your device and is never transmitted to EXTRA SAFE's servers, which is the technical detail behind every claim about self-custody in this list.</p>
-          </details>
-          <details>
-            <summary>Can EXTRA SAFE Read My Messages?</summary>
-            <p>No. The encryption keys reside only on the sender's and recipient's devices, so the architecture makes it structurally impossible for EXTRA SAFE to read message content — not just a policy promising not to.</p>
-          </details>
-          <details>
-            <summary>What Makes EXTRA SAFE Different From Using a Wallet App and a Messenger Separately?</summary>
-            <p>Running a wallet and a messenger separately means switching apps for every transfer, copying addresses by hand, and losing any connection between a conversation and the money attached to it. EXTRA SAFE keeps both in one place, tied to the same identity, so sending funds is just another action within a conversation.</p>
-          </details>
         </div>
       </div>
     </section>
 
     <!-- ============================== 10 FINAL CTA (light) ============================== -->
-    <section class="section theme-light" aria-labelledby="cta-title">
+    <section class="section theme-light" id="download" aria-labelledby="cta-title">
       <div class="container">
         <div class="cta-banner theme-dark">
           <div class="cta-banner__copy">
             <h2 class="cta-banner__title" id="cta-title">Download EXTRA SAFE</h2>
-            <p class="body-l text-secondary">Messages and stablecoins in one self-custodial app — on iOS, Android and now on desktop.</p>
             <div class="store-badges">
               <a class="store-badge" href="https://apps.apple.com/app/id6745936574"><img src="app-store.svg" alt="Download on the App Store" width="180" height="52" /></a>
               <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.extrasafe.chat.app"><img src="google-play.svg" alt="Get it on Google Play" width="180" height="52" /></a>
               <a class="store-badge store-badge--desktop" href="https://www.extrasafe.chat/download">
                 <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 20h8M12 16v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-                <span class="store-badge__text"><small>DOWNLOAD FOR</small><strong>Desktop</strong></span>
-                <span class="tag-new">NEW</span>
+                <span class="store-badge__text"><small>Download for</small><strong>Desktop</strong></span>
               </a>
-            </div>
-            <div class="qr">
-              <!-- TODO: replace with the real QR code for the OneLink download URL -->
-              <span class="qr__code" aria-hidden="true"></span>
-              <span class="text-secondary">Scan to download<br />on your phone</span>
             </div>
           </div>
           <img class="cta-banner__media" src="https://www.extrasafe.chat/content-media/home/hero_101b2a8c22.png" alt="" loading="lazy" />
@@ -443,17 +390,13 @@
     </section>
   </main>
 
-  <!-- ============================== FOOTER (dark) ============================== -->
+  <!-- ============================== FOOTER (dark) — not part of the 4.0 mockup, kept from the live site ============================== -->
   <footer class="site-footer theme-dark">
     <div class="container">
       <div class="footer__top">
         <div class="footer__brand">
           <img src="logo.svg" alt="EXTRA SAFE" width="219" height="30" />
           <p class="text-muted">Self-custodial messenger with a stablecoin-first wallet.</p>
-          <div class="store-badges store-badges--compact">
-            <a class="store-badge" href="https://apps.apple.com/app/id6745936574"><img src="app-store.svg" alt="Download on the App Store" width="180" height="52" /></a>
-            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.extrasafe.chat.app"><img src="google-play.svg" alt="Get it on Google Play" width="180" height="52" /></a>
-          </div>
         </div>
         <nav class="footer__col" aria-label="Product"><h4>Product</h4><a href="https://www.extrasafe.chat/download">Download the App</a><a href="https://www.extrasafe.chat/p2p-web-call">Start Web Meeting</a><a href="https://ugtp.io">UGTP API</a></nav>
         <nav class="footer__col" aria-label="Chat"><h4>Chat</h4><a href="#">Encrypted Chats</a><a href="#">Ephemeral Messaging</a><a href="#">Encrypted File Transfer</a><a href="#">P2P Call</a></nav>
