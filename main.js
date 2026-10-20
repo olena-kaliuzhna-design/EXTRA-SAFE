@@ -83,7 +83,7 @@
   const NETS = {
     avax: { usd: 2500, asset: 'USDT' },
     bnb: { usd: 1240.5, asset: 'USDT' },
-    eth: { usd: 860.25, asset: 'USDC' },
+    eth: { usd: 860.25, asset: 'USDT' },
   };
   const curOrder = ['usd', 'inr', 'ngn'];
   const netOrder = ['avax', 'bnb', 'eth'];
@@ -91,6 +91,7 @@
   const balEl = w.querySelector('[data-balance]');
   const assetEl = w.querySelector('[data-asset]');
   const amtEl = w.querySelector('[data-amount]');
+  const badgeEl = w.querySelector('[data-net-badge]');
   let cur = 'usd', net = 'avax', shown = NETS.avax.usd, raf = 0, touched = false;
 
   function render(animate) {
@@ -100,6 +101,8 @@
     sw.dataset.active = cur;
     sw.querySelectorAll('button').forEach((b) => b.classList.toggle('is-active', b.dataset.cur === cur));
     w.querySelectorAll('.net-tab').forEach((b) => b.classList.toggle('is-active', b.dataset.net === net));
+    const tabIcon = w.querySelector(`.net-tab[data-net="${net}"] svg`);
+    if (badgeEl && tabIcon) badgeEl.innerHTML = tabIcon.outerHTML;
     cancelAnimationFrame(raf);
     if (!animate || reduce) { shown = target; balEl.textContent = FMT[cur](target); return; }
     balEl.classList.remove('is-flip'); void balEl.offsetWidth; balEl.classList.add('is-flip');
