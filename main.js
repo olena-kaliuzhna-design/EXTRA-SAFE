@@ -92,7 +92,7 @@
   const assetEl = w.querySelector('[data-asset]');
   const amtEl = w.querySelector('[data-amount]');
   const badgeEl = w.querySelector('[data-net-badge]');
-  let cur = 'usd', net = 'avax', shown = NETS.avax.usd, raf = 0, touched = false;
+  let cur = 'usd', net = 'avax', shown = NETS.avax.usd, raf = 0, pausedUntil = 0, pending = 0;
 
   function render(animate) {
     const target = NETS[net].usd * RATES[cur];
@@ -116,19 +116,40 @@
     raf = requestAnimationFrame(step);
   }
 
-  sw.querySelectorAll('button').forEach((b) => b.addEventListener('click', () => { touched = true; cur = b.dataset.cur; render(true); }));
-  w.querySelectorAll('.net-tab').forEach((b) => b.addEventListener('click', () => { touched = true; net = b.dataset.net; render(true); }));
+  // Keep the active network tab visible inside the clipped tab row
+  const tabsRow = w.querySelector('.net-tabs');
+  function revealTab() {
+    const t = w.querySelector(`.net-tab[data-net="${net}"]`);
+    if (!t || !tabsRow) return;
+    const left = t.offsetLeft - 8, right = t.offsetLeft + t.offsetWidth + 8;
+    if (left < tabsRow.scrollLeft) tabsRow.scrollTo({ left, behavior: reduce ? 'auto' : 'smooth' });
+    else if (right > tabsRow.scrollLeft + tabsRow.clientWidth) tabsRow.scrollTo({ left: right - tabsRow.clientWidth, behavior: reduce ? 'auto' : 'smooth' });
+  }
+  // Tap feedback — used both for real clicks and the automatic "presses"
+  function press(btn) {
+    btn.classList.remove('is-pressed'); void btn.offsetWidth; btn.classList.add('is-pressed');
+    setTimeout(() => btn.classList.remove('is-pressed'), 450);
+  }
+  sw.querySelectorAll('button').forEach((b) => b.addEventListener('click', () => { clearTimeout(pending); pausedUntil = Date.now() + 8000; press(b); cur = b.dataset.cur; render(true); }));
+  w.querySelectorAll('.net-tab').forEach((b) => b.addEventListener('click', () => { clearTimeout(pending); pausedUntil = Date.now() + 8000; press(b); net = b.dataset.net; render(true); revealTab(); }));
   render(false);
 
-  // Auto-play: $ → ₹ → ₦, then next network. Stops once the visitor clicks.
+  // Auto-play: the switch "presses itself" $ → ₹ → ₦, then taps the next network.
+  // A visitor's click pauses it for 8 s, then it carries on from where they left it.
   if (!reduce) {
-    let i = 0;
     setInterval(() => {
-      if (touched || document.hidden) return;
-      i = (i + 1) % curOrder.length;
-      cur = curOrder[i];
-      if (i === 0) net = netOrder[(netOrder.indexOf(net) + 1) % netOrder.length];
-      render(true);
+      if (document.hidden || Date.now() < pausedUntil) return;
+      const i = (curOrder.indexOf(cur) + 1) % curOrder.length;
+      if (i === 0) {
+        const nextNet = netOrder[(netOrder.indexOf(net) + 1) % netOrder.length];
+        const tab = w.querySelector(`.net-tab[data-net="${nextNet}"]`);
+        if (tab) press(tab);
+        pending = setTimeout(() => { net = nextNet; cur = 'usd'; render(true); revealTab(); }, 220);
+      } else {
+        const btn = sw.querySelector(`button[data-cur="${curOrder[i]}"]`);
+        if (btn) press(btn);
+        pending = setTimeout(() => { cur = curOrder[i]; render(true); }, 220);
+      }
     }, 2600);
   }
 })();

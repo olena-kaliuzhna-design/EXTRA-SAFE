@@ -898,3 +898,25 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .token-icon > svg { width: 28px; height: 28px; }
 .token-icon__net { position: absolute; right: -4px; bottom: -4px; width: 13px; height: 13px; border-radius: 50%; box-shadow: 0 0 0 2px #232524; background: #232524; }
 .token-icon__net svg { width: 13px; height: 13px; display: block; }
+/* Network tabs are clipped inside the widget (like the app): scrollable row, fade on the edge */
+.wallet-widget { overflow: hidden; }
+.net-tabs {
+  overflow-x: auto; overflow-y: hidden; scrollbar-width: none;
+  margin-inline: -16px; padding-inline: 16px; scroll-padding-inline: 16px;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 16px, #000 calc(100% - 28px), transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0, #000 16px, #000 calc(100% - 28px), transparent 100%);
+}
+.net-tabs::-webkit-scrollbar { display: none; }
+.net-tab { flex: none; }
+
+/* Tap feedback (real clicks + automatic presses) */
+.net-tab, .cur-switch button { position: relative; transition: transform .15s ease, border-color .25s ease, color .25s ease, background-color .25s ease; }
+.cur-switch button { border-radius: var(--radius-pill); }
+.net-tab.is-pressed, .cur-switch button.is-pressed { animation: tap .45s ease; }
+.net-tab.is-pressed::after, .cur-switch button.is-pressed::after {
+  content: ""; position: absolute; left: 50%; top: 50%; width: 36px; height: 36px; margin: -18px 0 0 -18px;
+  border-radius: 50%; background: rgba(91,200,153,.45); pointer-events: none;
+  animation: tap-ripple .45s ease-out forwards;
+}
+@keyframes tap { 30% { transform: scale(.9); } 100% { transform: scale(1); } }
+@keyframes tap-ripple { from { transform: scale(.2); opacity: 1; } to { transform: scale(1.8); opacity: 0; } }
