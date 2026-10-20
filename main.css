@@ -748,3 +748,27 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .cta-hero .store-badges { gap: 8px; flex-wrap: nowrap; }
   .cta-hero .store-badge, .cta-hero .store-badge img { height: 44px; }
 }
+
+/* Final CTA v2 — the whole banner is one photo (cta-bg.jpg: hand holding a phone with the EXTRA SAFE app) */
+.cta-hero { --cta-image: url("cta-bg.jpg"); }
+.cta-hero__bg,
+.cta-hero__bg {
+  background:
+    linear-gradient(180deg, rgba(16,16,16,0) 35%, rgba(16,16,16,.55) 70%, rgba(16,16,16,.85) 100%),
+    var(--cta-image) left center / cover no-repeat,
+    var(--neutral-950);
+}
+.cta-hero__bg::after { display: none; }
+@media (max-width: 1199px) {
+  .cta-hero__bg { background:
+    linear-gradient(180deg, rgba(16,16,16,0) 30%, rgba(16,16,16,.6) 65%, rgba(16,16,16,.9) 100%),
+    var(--cta-image) 30% center / cover no-repeat,
+    var(--neutral-950); }
+}
+@media (max-width: 767px) {
+  .cta-hero { min-height: 560px; padding-top: 32px; }
+  .cta-hero__bg { background:
+    linear-gradient(180deg, rgba(16,16,16,0) 40%, rgba(16,16,16,.75) 68%, rgba(16,16,16,.95) 100%),
+    var(--cta-image) 32% center / cover no-repeat,
+    var(--neutral-950); }
+}
