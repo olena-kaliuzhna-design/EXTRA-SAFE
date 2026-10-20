@@ -1,34 +1,37 @@
 // EXTRA SAFE — Landing 4.0
-// 1) Sticky header gets a border/shadow once the page is scrolled
-// 2) Mobile menu toggle (only if a burger menu is added to the header)
+// 1) Header: dropdowns (Chat / Wallet / Resources) — same behaviour as www.extrasafe.chat
+// 2) Header: burger menu below 1280px
 // 3) FAQ: keep one answer open at a time
 
 (function () {
   const header = document.querySelector('.site-header');
   const burger = document.querySelector('.header__burger');
-  const menu = document.getElementById('mobile-menu');
+  const toggles = document.querySelectorAll('.nav-toggle');
 
-  // 1. Sticky header state
-  const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
+  // 1. Dropdowns
+  const closeAll = (except) => toggles.forEach((t) => { if (t !== except) t.setAttribute('aria-expanded', 'false'); });
+  toggles.forEach((t) => {
+    t.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = t.getAttribute('aria-expanded') === 'true';
+      closeAll(t);
+      t.setAttribute('aria-expanded', String(!open));
+    });
+  });
+  document.addEventListener('click', (e) => { if (!e.target.closest('.nav-item')) closeAll(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeAll(); setMenu(false); } });
 
-  // 2. Mobile menu
-  if (burger && menu) {
-    burger.addEventListener('click', () => {
-      const open = burger.getAttribute('aria-expanded') === 'true';
-      burger.setAttribute('aria-expanded', String(!open));
-      burger.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
-      menu.hidden = open;
-    });
-    menu.addEventListener('click', (e) => {
-      if (e.target.closest('a')) {
-        menu.hidden = true;
-        burger.setAttribute('aria-expanded', 'false');
-        burger.setAttribute('aria-label', 'Open menu');
-      }
-    });
+  // 2. Burger menu
+  function setMenu(open) {
+    if (!header || !burger) return;
+    header.classList.toggle('menu-open', open);
+    document.body.classList.toggle('no-scroll', open);
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    if (!open) closeAll();
   }
+  if (burger) burger.addEventListener('click', () => setMenu(!header.classList.contains('menu-open')));
+  window.addEventListener('resize', () => { if (window.innerWidth >= 1280) setMenu(false); });
 
   // 3. FAQ accordion (one open at a time)
   const items = document.querySelectorAll('.faq__list details');

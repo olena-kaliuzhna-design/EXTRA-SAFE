@@ -9,10 +9,10 @@ No build step: open `index.html` in a browser, or publish the repo with GitHub P
 All files sit in the repo root (no folders), so they can be uploaded through the GitHub web interface as-is.
 
 ```
-index.html        page markup, 10 sections + header/footer
+index.html        page markup, 10 sections + header/footer (header and footer copied 1:1 from www.extrasafe.chat)
 tokens.css        design tokens (colors, type scale, spacing, radii, Dark/Light themes, breakpoints)
 main.css          layout and components
-main.js           sticky header state, mobile menu, FAQ accordion
+main.js           header dropdowns, burger menu (<1280px), FAQ accordion
 logo.svg          EXTRA SAFE logo
 app-store.svg     App Store badge
 google-play.svg   Google Play badge
@@ -45,16 +45,15 @@ Light/dark alternation is controlled by the `.theme-dark` / `.theme-light` class
 
 ## Responsive behaviour
 
-- **≥1200px**: two-column layouts, full navigation.
-- **768–1199px**: single column, burger menu.
-- **<768px**: mobile type scale; header stays pinned with the EN / हिन्दी switch and an always-visible **Download** button; the Desktop badge is hidden; the hero shows the phone image instead of the desktop-app mock.
+- **Header** (same as the live site): ≥1280px full navigation with Chat / Wallet / Resources dropdowns and Start a Meeting; below 1280px a burger menu with the same links, Start a Meeting and Download for Mac.
+- **≥1200px**: two-column layouts.
+- **768–1199px**: single column.
+- **<768px**: mobile type scale; the Desktop badge is hidden; the hero shows the phone image instead of the desktop-app mock.
 
 ## To do
 
 - [ ] Images are loaded from `https://www.extrasafe.chat/content-media/home/…`. Upload them to the repo root and update the `src` paths if the repo should be self-contained.
 - [ ] Hero: add the real photo (Indian family, a real life moment) and the real desktop-app screenshot (chat with transfer card, ₹ INR toggle visible).
 - [ ] Gift Link visual: replace the QR placeholder with a real QR code.
-- [ ] Language switch: the हिन्दी link has no Hindi page yet.
-- [ ] Footer is not in the 4.0 mockup; it is kept from the live site.
-- [ ] Fill in the `href="#"` links: Learn more (Private Balances), Learn more about fees, Help Center (More), footer pages.
+- [ ] Fill in the `href="#"` links: Learn more (Private Balances), Learn more about fees.
 - [ ] Fees: Variant A is live. Variant B (0.25% EXTRA SAFE fee + 0.20% routing fee) is in an HTML comment in section 07.
