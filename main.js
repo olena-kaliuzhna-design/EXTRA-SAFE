@@ -42,3 +42,90 @@
     });
   });
 })();
+
+// ==========================================================================
+// Hero: tilt the desktop app toward the pointer (like touching it)
+// ==========================================================================
+(function () {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const area = document.querySelector('[data-tilt-area]');
+  const win = document.querySelector('[data-tilt]');
+  if (!area || !win || reduce || !window.matchMedia('(hover: hover)').matches) return;
+  area.addEventListener('pointermove', (e) => {
+    const r = win.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5;
+    const y = (e.clientY - r.top) / r.height - 0.5;
+    win.classList.add('is-tilting');
+    win.style.transform = `rotateY(${x * 10}deg) rotateX(${-y * 8}deg) scale(1.015)`;
+    win.style.setProperty('--mx', `${(x + 0.5) * 100}%`);
+    win.style.setProperty('--my', `${(y + 0.5) * 100}%`);
+  });
+  area.addEventListener('pointerleave', () => {
+    win.classList.remove('is-tilting');
+    win.style.transform = '';
+  });
+})();
+
+// ==========================================================================
+// Hero: EXTRA WALLET widget — network tabs + $ / ₹ / ₦ switch with live conversion
+// Rates are illustrative (display only).
+// ==========================================================================
+(function () {
+  const w = document.querySelector('[data-wallet]');
+  if (!w) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const RATES = { usd: 1, inr: 88.7, ngn: 1530 };
+  const FMT = {
+    usd: (v) => '$' + v.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+    inr: (v) => '₹' + v.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+    ngn: (v) => '₦' + v.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+  };
+  const NETS = {
+    avax: { usd: 2500, asset: 'USDT' },
+    bnb: { usd: 1240.5, asset: 'USDT' },
+    eth: { usd: 860.25, asset: 'USDC' },
+  };
+  const curOrder = ['usd', 'inr', 'ngn'];
+  const netOrder = ['avax', 'bnb', 'eth'];
+  const sw = w.querySelector('.cur-switch');
+  const balEl = w.querySelector('[data-balance]');
+  const assetEl = w.querySelector('[data-asset]');
+  const amtEl = w.querySelector('[data-amount]');
+  let cur = 'usd', net = 'avax', shown = NETS.avax.usd, raf = 0, touched = false;
+
+  function render(animate) {
+    const target = NETS[net].usd * RATES[cur];
+    assetEl.textContent = NETS[net].asset;
+    amtEl.textContent = NETS[net].usd.toLocaleString('en-US', { minimumFractionDigits: 2 }) + ' ' + NETS[net].asset;
+    sw.dataset.active = cur;
+    sw.querySelectorAll('button').forEach((b) => b.classList.toggle('is-active', b.dataset.cur === cur));
+    w.querySelectorAll('.net-tab').forEach((b) => b.classList.toggle('is-active', b.dataset.net === net));
+    cancelAnimationFrame(raf);
+    if (!animate || reduce) { shown = target; balEl.textContent = FMT[cur](target); return; }
+    balEl.classList.remove('is-flip'); void balEl.offsetWidth; balEl.classList.add('is-flip');
+    const from = shown, t0 = performance.now();
+    const step = (t) => {
+      const k = Math.min(1, (t - t0) / 650), e = 1 - Math.pow(1 - k, 3);
+      shown = from + (target - from) * e;
+      balEl.textContent = FMT[cur](shown);
+      if (k < 1) raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+  }
+
+  sw.querySelectorAll('button').forEach((b) => b.addEventListener('click', () => { touched = true; cur = b.dataset.cur; render(true); }));
+  w.querySelectorAll('.net-tab').forEach((b) => b.addEventListener('click', () => { touched = true; net = b.dataset.net; render(true); }));
+  render(false);
+
+  // Auto-play: $ → ₹ → ₦, then next network. Stops once the visitor clicks.
+  if (!reduce) {
+    let i = 0;
+    setInterval(() => {
+      if (touched || document.hidden) return;
+      i = (i + 1) % curOrder.length;
+      cur = curOrder[i];
+      if (i === 0) net = netOrder[(netOrder.indexOf(net) + 1) % netOrder.length];
+      render(true);
+    }, 2600);
+  }
+})();

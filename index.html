@@ -93,42 +93,45 @@
           </div>
         </div>
 
-        <!-- Desktop: product shot. TODO: real photo (Indian family, a real life moment) + desktop app screenshot (chat with transfer card, ₹ INR toggle visible) -->
-        <div class="hero__visual" role="img" aria-label="EXTRA SAFE desktop app: chat with a transfer card and the ₹ INR toggle">
-          <div class="app-window">
-            <div class="app-window__bar"><i></i><i></i><i></i><span>EXTRA SAFE</span></div>
-            <div class="app-window__body">
-              <aside class="app-window__sidebar">
-                <div class="chat-row is-active"><b class="avatar avatar--accent">M</b><div><strong>Mom</strong><span>Thank you!</span></div></div>
-                <div class="chat-row"><b class="avatar">D</b><div><strong>Dad</strong><span>Video call</span></div></div>
-                <div class="chat-row"><b class="avatar">S</b><div><strong>Sofia</strong><span>Gift Funded!</span></div></div>
-              </aside>
-              <div class="app-window__chat">
-                <div class="chat-head">
-                  <div><strong>Mom</strong><span class="online">Video call</span></div>
-                  <span class="timer-chip">1 Month</span>
-                </div>
-                <div class="chat-msgs">
-                  <p class="e2e-note">This chat is E2E encrypted using asymmetric cryptography. Only you and your recipient can read the messages.</p>
-                  <div class="bubble bubble--in">Look at her! She's grown so much</div>
-                  <div class="bubble bubble--out">Sending this month's transfer. Tell dad too.</div>
-                  <div class="transfer-card align-end">
-                    <div class="transfer-card__body">
-                      <div class="transfer-card__head"><span>Sent</span><span class="status">Completed</span></div>
-                      <div class="transfer-card__amount"><b class="token">₮</b><div><strong>250</strong><span>USDT</span></div></div>
-                    </div>
-                    <div class="transfer-card__foot">Show transaction details</div>
-                  </div>
-                  <div class="bubble bubble--in">Thank you!</div>
-                </div>
-                <div class="chat-composer">Message</div>
-              </div>
-            </div>
+        <!-- Desktop: interactive product shot — real EXTRA SAFE desktop app (Native app – Design, node 33720:135454).
+             Tilts toward the pointer, floats; wallet widget switches network + currency with live conversion. -->
+        <div class="hero__visual" data-tilt-area>
+          <figure class="desk-window" data-tilt>
+            <div class="desk-window__bar" aria-hidden="true"><i></i><i></i><i></i><span>EXTRA SAFE</span></div>
+            <img class="desk-window__shot" src="hero-desktop-chat.jpg" width="1041" height="827"
+                 alt="EXTRA SAFE desktop app: a chat with Sam with photos, a voice note and a received 50 USDt transfer marked Completed" />
+            <span class="desk-window__glare" aria-hidden="true"></span>
+          </figure>
+
+          <!-- Floating chip -->
+          <div class="float-chip gas-chip" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            Gas paid in <b>USDT</b>
           </div>
-          <div class="wallet-card">
-            <div class="wallet-card__head"><span class="label">EXTRA WALLET</span><span class="net-chip">Avalanche C</span></div>
-            <div class="currency-toggle"><span class="is-active">$ USD</span><span>₹ INR</span></div>
-            <strong class="wallet-card__balance">$2,500.00</strong>
+
+          <!-- Floating wallet widget (Native app – Design, node 32883:185116) -->
+          <div class="float-chip wallet-widget" data-wallet>
+            <div class="wallet-widget__title">
+              <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7l8-4 8 4v10l-8 4-8-4z" fill="#3470D1"/><path d="M12 3v18M4 7l8 4 8-4" fill="none" stroke="#9DB8F0" stroke-width="1.2"/></svg>
+              EXTRA WALLET
+            </div>
+            <div class="net-tabs" role="tablist" aria-label="Network">
+              <button type="button" role="tab" class="net-tab is-active" data-net="avax"><i style="--c:#E84142"></i>Avalanche C</button>
+              <button type="button" role="tab" class="net-tab" data-net="bnb"><i style="--c:#F3BA2F"></i>BNB</button>
+              <button type="button" role="tab" class="net-tab" data-net="eth"><i style="--c:#627EEA"></i>Ethereum</button>
+            </div>
+            <div class="cur-switch" role="tablist" aria-label="Currency" data-active="usd">
+              <span class="cur-switch__thumb" aria-hidden="true"></span>
+              <button type="button" role="tab" class="is-active" data-cur="usd">$ USD</button>
+              <button type="button" role="tab" data-cur="inr">₹ INR</button>
+              <button type="button" role="tab" data-cur="ngn">₦ NGN</button>
+            </div>
+            <strong class="wallet-widget__balance" data-balance aria-live="polite">$2,500.00</strong>
+            <span class="wallet-widget__hint">Tap to view portfolio</span>
+            <div class="wallet-widget__row">
+              <b class="token">₮</b><span class="wallet-widget__asset" data-asset>USDT</span>
+              <span class="wallet-widget__amt" data-amount>2,500.00 USDT</span>
+            </div>
           </div>
         </div>
 

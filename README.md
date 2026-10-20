@@ -12,11 +12,12 @@ All files sit in the repo root (no folders), so they can be uploaded through the
 index.html        page markup, 10 sections + header/footer (header and footer copied 1:1 from www.extrasafe.chat)
 tokens.css        design tokens (colors, type scale, spacing, radii, Dark/Light themes, breakpoints)
 main.css          layout and components
-main.js           header dropdowns, burger menu (<1280px), FAQ accordion
+main.js           header dropdowns, burger menu (<1280px), FAQ accordion, hero tilt, wallet switcher
 logo.svg          EXTRA SAFE logo
 app-store.svg     App Store badge
 google-play.svg   Google Play badge
 qr-download.svg   QR code → https://www.extrasafe.chat/download (Final CTA)
+hero-desktop-chat.jpg  Hero: real EXTRA SAFE desktop app screenshot (Figma: Native app – Design, node 33720:135454)
 cta-bg.jpg        Final CTA background: generated photo of a hand holding a phone, with the EXTRA SAFE welcome screen from the Native app file
 ```
 
@@ -24,7 +25,7 @@ cta-bg.jpg        Final CTA background: generated photo of a hand holding a phon
 
 | # | Section | Theme |
 |---|---------|-------|
-| 01 | Hero — Send Tokenized Dollars in Chat (+ desktop-app product shot) | dark |
+| 01 | Hero — Send Tokenized Dollars in Chat; desktop app tilts toward the pointer and floats; floating "Gas paid in USDT" chip; EXTRA WALLET widget switches network (Avalanche C / BNB / Ethereum) and currency ($ / ₹ / ₦) with live conversion, auto-plays until clicked | dark |
 | 02 | Signature Flow — See Who You're Paying, Then Pay Them | light |
 | 03 | Feature Row — Built-in Wallet | dark |
 | 04 | Private Balances | light |
@@ -55,7 +56,7 @@ Light/dark alternation is controlled by the `.theme-dark` / `.theme-light` class
 ## To do
 
 - [ ] Images are loaded from `https://www.extrasafe.chat/content-media/home/…`. Upload them to the repo root and update the `src` paths if the repo should be self-contained.
-- [ ] Hero: add the real photo (Indian family, a real life moment) and the real desktop-app screenshot (chat with transfer card, ₹ INR toggle visible).
+- [ ] Hero wallet widget: balances and FX rates (₹88.7, ₦1,530 per $) are illustrative — set real values in `main.js` (RATES / NETS).
 - [ ] Gift Link visual: replace the QR placeholder with a real QR code.
 - [ ] Final CTA background: `cta-bg.jpg` is AI-generated (hand + phone) with the real app screen composited in. To swap it, replace the file (same name) — ideally ~2400px wide, phone in the left third.
 - [ ] Fill in the `href="#"` links: Learn more (Private Balances), Learn more about fees.
