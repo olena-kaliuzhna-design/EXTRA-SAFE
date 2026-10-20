@@ -920,3 +920,29 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 @keyframes tap { 30% { transform: scale(.9); } 100% { transform: scale(1); } }
 @keyframes tap-ripple { from { transform: scale(.2); opacity: 1; } to { transform: scale(1.8); opacity: 0; } }
+
+/* Hero headline: the word "Chat" sits in an outgoing chat bubble */
+.chat-bubble {
+  position: relative; display: inline-block;
+  margin-left: .12em; padding: 0 .28em .06em;
+  border-radius: .32em .32em .1em .32em;
+  background: var(--green-500); color: var(--neutral-900);
+  line-height: 1.12; white-space: nowrap;
+}
+.chat-bubble::after {
+  content: ""; position: absolute; right: -.2em; bottom: 0;
+  width: .22em; height: .22em; background: var(--green-500);
+  -webkit-mask: radial-gradient(circle at 100% 0, transparent .22em, #000 calc(.22em + .5px));
+          mask: radial-gradient(circle at 100% 0, transparent .22em, #000 calc(.22em + .5px));
+}
+.chat-bubble { padding: .02em .3em .08em; border-radius: .34em .34em .04em .34em; margin-left: .1em; }
+.chat-bubble::after {
+  right: -.3em; width: .34em; height: .34em;
+  -webkit-mask: radial-gradient(circle at 100% 0, transparent .32em, #000 calc(.32em + .5px));
+          mask: radial-gradient(circle at 100% 0, transparent .32em, #000 calc(.32em + .5px));
+}
+.chat-bubble::after {
+  right: -.32em; bottom: 0; width: .4em; height: .4em;
+  background: no-repeat center / 100% 100% url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M0 0 Q1 17 20 20 L0 20 Z' fill='%235BC899'/%3E%3C/svg%3E");
+  -webkit-mask: none; mask: none;
+}

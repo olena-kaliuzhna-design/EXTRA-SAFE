@@ -25,7 +25,7 @@ cta-bg.jpg        Final CTA background: generated photo of a hand holding a phon
 
 | # | Section | Theme |
 |---|---------|-------|
-| 01 | Hero — Send Tokenized Dollars in Chat; desktop app tilts toward the pointer and floats; floating "Gas paid in USDT" chip; EXTRA WALLET widget switches network (Avalanche C / BNB / Ethereum) and currency ($ / ₹ / ₦) with live conversion, auto-presses itself (tap animation), pauses 8 s after a visitor click; network tabs are clipped inside the widget | dark |
+| 01 | Hero — Send Tokenized Dollars in Chat ("Chat" in a green chat bubble); desktop app tilts toward the pointer and floats; floating "Gas paid in USDT" chip; EXTRA WALLET widget switches network (Avalanche C / BNB / Ethereum) and currency ($ / ₹ / ₦) with live conversion, auto-presses itself (tap animation), pauses 8 s after a visitor click; network tabs are clipped inside the widget | dark |
 | 02 | Signature Flow — See Who You're Paying, Then Pay Them | light |
 | 03 | Feature Row — Built-in Wallet | dark |
 | 04 | Private Balances | light |
