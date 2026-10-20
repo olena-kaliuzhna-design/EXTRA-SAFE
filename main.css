@@ -685,3 +685,66 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .footer__row { flex-direction: column; align-items: flex-start; }
   .footer__bottom { flex-direction: column; }
 }
+
+/* ==========================================================================
+   10 Final CTA — full-image banner (pattern: large card, photo background, centered QR + CTA)
+   ========================================================================== */
+.cta-hero {
+  --cta-image: url("https://www.extrasafe.chat/content-media/home/hero_101b2a8c22.png");
+  position: relative; isolation: isolate; overflow: hidden;
+  min-height: 600px;
+  display: flex; align-items: flex-end; justify-content: center;
+  padding: var(--space-80) var(--space-64) var(--space-64);
+  border-radius: var(--radius-lg);
+  background: var(--neutral-950);
+  color: #fff;
+}
+.cta-hero__bg {
+  position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(24,24,24,0) 0%, rgba(24,24,24,.35) 45%, rgba(24,24,24,.92) 100%),
+    radial-gradient(60% 80% at 22% 40%, rgba(91,200,153,.22) 0%, rgba(91,200,153,0) 70%),
+    var(--cta-image) left 4% center / auto 112% no-repeat,
+    var(--neutral-950);
+}
+.cta-hero__bg::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(24,24,24,0) 30%, rgba(24,24,24,.55) 60%, rgba(24,24,24,.8) 100%);
+}
+.cta-hero__content {
+  display: flex; flex-direction: column; align-items: center; gap: var(--space-32);
+  max-width: 760px; text-align: center;
+}
+.cta-hero__qr { width: 132px; height: 132px; }
+.cta-hero__title {
+  font-size: 72px; line-height: 80px; font-weight: 600; letter-spacing: -1px;
+  text-shadow: 0 4px 30px rgba(0,0,0,.4);
+}
+.store-badges--center { justify-content: center; }
+
+@media (max-width: 1199px) {
+  .cta-hero { min-height: 520px; padding: var(--space-64) var(--space-40) var(--space-48); }
+  .cta-hero__title { font-size: 56px; line-height: 64px; }
+  .cta-hero__bg { background:
+    linear-gradient(180deg, rgba(24,24,24,.1) 0%, rgba(24,24,24,.55) 50%, rgba(24,24,24,.95) 100%),
+    var(--cta-image) center top / auto 80% no-repeat,
+    var(--neutral-950); }
+  .cta-hero__bg::after { display: none; }
+}
+@media (max-width: 767px) {
+  .cta-hero { min-height: 480px; padding: 220px 20px 32px; border-radius: var(--radius-md); }
+  .cta-hero__qr { display: none; }            /* QR is for desktop visitors */
+  .cta-hero__content { gap: 20px; }
+  .cta-hero__title { font-size: var(--fs-h2); line-height: var(--lh-h2); }
+  .cta-hero__bg { background:
+    linear-gradient(180deg, rgba(24,24,24,0) 20%, rgba(24,24,24,.9) 62%, rgba(24,24,24,1) 100%),
+    var(--cta-image) center top -10px / auto 300px no-repeat,
+    var(--neutral-950); }
+}
+.cta-hero__content { max-width: 960px; }
+@media (min-width: 768px) { .cta-hero__title { white-space: nowrap; } }
+@media (max-width: 767px) {
+  .cta-hero { padding-left: 12px; padding-right: 12px; }
+  .cta-hero .store-badges { gap: 8px; flex-wrap: nowrap; }
+  .cta-hero .store-badge, .cta-hero .store-badge img { height: 44px; }
+}

@@ -16,6 +16,7 @@ main.js           header dropdowns, burger menu (<1280px), FAQ accordion
 logo.svg          EXTRA SAFE logo
 app-store.svg     App Store badge
 google-play.svg   Google Play badge
+qr-download.svg   QR code → https://www.extrasafe.chat/download (Final CTA)
 ```
 
 ## Sections
@@ -31,7 +32,7 @@ google-play.svg   Google Play badge
 | 07 | Fees (Variant A for swapping) | dark |
 | 08 | Proof + Community (stats, Get the app, Insiders Hub) | light |
 | 09 | FAQ (5 questions) | dark |
-| 10 | Final CTA — Download EXTRA SAFE | light |
+| 10 | Final CTA — full-image banner: QR + Download EXTRA SAFE + store badges | light page, dark banner |
 
 Light/dark alternation is controlled by the `.theme-dark` / `.theme-light` class on each section. Each class redefines the semantic color variables (`--bg-page`, `--text-primary`, `--text-accent`, …) from `tokens.css`.
 
@@ -55,5 +56,6 @@ Light/dark alternation is controlled by the `.theme-dark` / `.theme-light` class
 - [ ] Images are loaded from `https://www.extrasafe.chat/content-media/home/…`. Upload them to the repo root and update the `src` paths if the repo should be self-contained.
 - [ ] Hero: add the real photo (Indian family, a real life moment) and the real desktop-app screenshot (chat with transfer card, ₹ INR toggle visible).
 - [ ] Gift Link visual: replace the QR placeholder with a real QR code.
+- [ ] Final CTA background: replace `--cta-image` in `main.css` (section "10 Final CTA") with a real lifestyle photo (hand holding the phone with EXTRA SAFE open). It currently uses the site's hero phone image.
 - [ ] Fill in the `href="#"` links: Learn more (Private Balances), Learn more about fees.
 - [ ] Fees: Variant A is live. Variant B (0.25% EXTRA SAFE fee + 0.20% routing fee) is in an HTML comment in section 07.
