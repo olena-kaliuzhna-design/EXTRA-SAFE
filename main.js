@@ -153,3 +153,48 @@
     }, 2600);
   }
 })();
+
+// ==========================================================================
+// 02 Transaction Flow — app animation card (ref: keet.io)
+// Cycles call → attachment menu → status; the matching step highlights.
+// Clicking a step jumps to it and holds for a few seconds.
+// ==========================================================================
+(function () {
+  const card = document.querySelector('[data-kt]');
+  if (!card) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const steps = [...document.querySelectorAll('.kt-steps li')];
+  const list = document.querySelector('.kt-steps');
+  const DUR = [4600, 5200, 5200];
+  const timerEl = card.querySelector('[data-kt-timer]');
+  const typeEl = card.querySelector('[data-kt-type]');
+  const amountEl = card.querySelector('[data-kt-amount]');
+  const fullText = typeEl ? typeEl.dataset.ktType : '';
+  let scene = 0, next = 0, ticks = [], visible = false, holdUntil = 0;
+  const later = (fn, ms) => ticks.push(setTimeout(fn, ms));
+
+  function enter(i) {
+    ticks.forEach(clearTimeout); ticks = [];
+    scene = i;
+    card.dataset.scene = '';            // restart CSS animations
+    void card.offsetWidth;
+    card.dataset.scene = String(i);
+    steps.forEach((li, k) => li.classList.toggle('is-active', k === i));
+    list.style.setProperty('--kt-dur', DUR[i] + 'ms');
+    steps[i].querySelector('.kt-steps__bar').replaceWith(steps[i].querySelector('.kt-steps__bar').cloneNode()); // restart bar
+    if (reduce) { if (typeEl) typeEl.textContent = fullText; if (timerEl) timerEl.textContent = '0:42'; return; }
+    if (i === 0 && timerEl) { let s = 38; timerEl.textContent = '0:' + s; for (let k = 1; k <= 4; k++) later(() => { timerEl.textContent = '0:' + (38 + k); }, k * 1000); }
+    if (i === 1 && typeEl) { typeEl.textContent = ''; [...fullText].forEach((ch, k) => later(() => { typeEl.textContent += ch; }, 300 + k * 45)); }
+    if (i === 2 && amountEl) { const t0 = performance.now() + 350; const f = (t) => { const k = Math.max(0, Math.min(1, (t - t0) / 700)); amountEl.textContent = Math.round(250 * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(f); }; amountEl.textContent = '0'; requestAnimationFrame(f); }
+    later(advance, Math.max(DUR[i], holdUntil - Date.now()));
+  }
+  function advance() { if (!visible || document.hidden) { next = (scene + 1) % 3; return; } enter((scene + 1) % 3); }
+
+  steps.forEach((li, k) => li.querySelector('button').addEventListener('click', () => { holdUntil = Date.now() + 8000; enter(k); }));
+  if (reduce) { list.classList.add('is-paused'); enter(2); return; }
+  new IntersectionObserver((e) => {
+    const was = visible; visible = e[0].isIntersecting;
+    if (visible && !was) enter(next || 0);
+  }, { threshold: 0.35 }).observe(card);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden && visible) enter((scene + 1) % 3); });
+})();

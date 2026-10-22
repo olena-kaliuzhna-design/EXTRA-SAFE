@@ -139,53 +139,70 @@
       </div>
     </section>
 
-    <!-- ============================== 02 SIGNATURE FLOW (light) ============================== -->
-    <section class="section theme-light" aria-labelledby="flow-title">
-      <div class="container stack">
-        <header class="section-head">
-          <span class="pill">Transaction Flow</span>
+    <!-- ============================== 02 SIGNATURE FLOW (dark) — app animation (ref: keet.io) ============================== -->
+    <section class="section theme-dark kt" aria-labelledby="flow-title">
+      <div class="kt-doodles" aria-hidden="true">
+        <svg class="kt-d kt-d--1" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><path d="M24 15v18M19 19.5h7a3.5 3.5 0 0 1 0 7h-5a3.5 3.5 0 0 0 0 7h8"/></svg>
+        <svg class="kt-d kt-d--2" viewBox="0 0 48 48"><path d="M8 22l32-14-10 32-6-12z"/><path d="M24 28l16-20"/></svg>
+        <svg class="kt-d kt-d--3" viewBox="0 0 48 48"><path d="M24 38c-8-6-14-11-14-17a7 7 0 0 1 14-2 7 7 0 0 1 14 2c0 6-6 11-14 17z"/></svg>
+        <svg class="kt-d kt-d--4" viewBox="0 0 48 48"><path d="M24 6l4 12 12 4-12 4-4 12-4-12-12-4 12-4z"/></svg>
+        <svg class="kt-d kt-d--5" viewBox="0 0 48 48"><rect x="10" y="22" width="28" height="20" rx="5"/><path d="M16 22v-6a8 8 0 0 1 16 0v6"/></svg>
+        <svg class="kt-d kt-d--6" viewBox="0 0 48 48"><path d="M8 12h32v20H22l-8 8v-8H8z"/></svg>
+        <svg class="kt-d kt-d--7" viewBox="0 0 48 48"><rect x="12" y="12" width="22" height="22" rx="3" transform="rotate(14 23 23)"/></svg>
+        <svg class="kt-d kt-d--8" viewBox="0 0 48 48"><circle cx="24" cy="24" r="7"/></svg>
+      </div>
+      <div class="container kt-grid">
+
+        <!-- Animated app card: call → attach menu → status in chat -->
+        <div class="kt-card" data-kt data-scene="0" role="img" aria-label="EXTRA SAFE app: a video call with Mom, then Send USDT from the attachment menu, then the completed 250 USDT transfer and Mom's thank-you in the same chat">
+          <!-- Scene 1: in-chat video call -->
+          <div class="kt-scene kt-scene--call">
+            <div class="kt-frame kt-frame--lg"><span class="kt-ava kt-ava--lg">M</span></div>
+            <strong class="kt-call__name">Mom</strong>
+            <span class="kt-call__meta">Video call · <span data-kt-timer>0:38</span></span>
+            <div class="kt-call__ctrls"><i><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></i><i><svg viewBox="0 0 24 24"><rect x="3" y="6" width="12" height="12" rx="3"/><path d="M15 10.5l6-3.5v10l-6-3.5"/></svg></i><i class="end"><svg viewBox="0 0 24 24"><path d="M3 14c5-5 13-5 18 0l-2.5 2.5-3-1.5v-2.5a10 10 0 0 0-5 0V15l-3 1.5z"/></svg></i></div>
+            <div class="kt-self"><span class="kt-ava kt-ava--me">Y</span></div>
+          </div>
+
+          <!-- Scene 2: message + attachment menu -->
+          <div class="kt-scene kt-scene--attach">
+            <div class="kt-msgrow">
+              <div class="kt-frame"><span class="kt-ava">M</span></div>
+              <div class="kt-bubble kt-bubble--type"><time>9:43</time><span data-kt-type="Sending this month's transfer."></span><i class="kt-caret"></i></div>
+            </div>
+            <div class="kt-sheet">
+              <span>Image</span>
+              <span>File</span>
+              <span class="kt-sheet__pick"><b class="mini-token"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M14 28C21.732 28 28 21.732 28 14C28 6.268 21.732 0 14 0C6.268 0 0 6.268 0 14C0 21.732 6.268 28 14 28Z" fill="#009393"/><path fill-rule="evenodd" clip-rule="evenodd" d="M14.0164 15.0005C16.4241 15.0005 18.4362 14.5935 18.928 14.0496C18.5104 13.5883 17.0002 13.225 15.0822 13.1256V14.2746C14.7388 14.2925 14.3818 14.3012 14.0161 14.3012C13.6503 14.3012 13.2933 14.2925 12.9493 14.2746V13.1256C11.032 13.225 9.521 13.5883 9.10345 14.0496C9.5959 14.5935 11.6084 15.0005 14.0161 15.0005H14.0164ZM18.2941 9.59198V11.1743H15.0822V12.2716C17.3383 12.3888 19.0312 12.8711 19.0438 13.4483V14.6516C19.0312 15.2287 17.3383 15.71 15.0822 15.8276V18.5205H12.9496V15.8276C10.6935 15.7103 9.00125 15.2287 8.98865 14.6516V13.4483C9.00125 12.8711 10.6935 12.3888 12.9496 12.2716V11.1743H9.73765V9.59198H18.2945H18.2941ZM8.4745 7.07373H19.7501C20.0196 7.07373 20.2678 7.21548 20.4022 7.44578L23.6869 13.0864C23.857 13.379 23.8066 13.7482 23.5637 13.9852L14.5218 22.8115C14.2285 23.0974 13.7574 23.0974 13.4648 22.8115L4.4341 13.9971C4.18595 13.7542 4.13905 13.3744 4.3221 13.0804L7.83365 7.42828C7.9705 7.20848 8.2134 7.07408 8.47485 7.07408L8.4745 7.07373Z" fill="white"/></svg></b>Send USDT<i class="kt-tap"></i></span>
+              <span><b class="mini-token mini-token--eth"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#111111"/><path d="M8 3V6.69527L11.1248 8.09289L8 3Z" fill="#8FFCF3"/><path d="M7.99978 3L4.875 8.09233L7.99978 6.69586V3Z" fill="#CABCF8"/><path d="M8 10.4871V12.9995L11.1248 8.6748L8 10.4871Z" fill="#CBA7F5"/><path d="M7.99978 12.9995V10.4871L4.875 8.6748L7.99978 12.9995Z" fill="#74A0F3"/><path d="M8 9.90576L11.1248 8.09342L8 6.6958V9.90576Z" fill="#CBA7F5"/><path d="M4.875 8.09342L7.99978 9.90576V6.6958L4.875 8.09342Z" fill="#74A0F3"/><path fill-rule="evenodd" clip-rule="evenodd" d="M7.99978 9.90522L4.875 8.09289L7.99978 3L11.1246 8.09233L7.99978 9.90522ZM5.08208 7.94533L7.94961 3.27299V6.67019L5.08208 7.94533ZM5.03949 8.0725L7.94961 6.77986V9.76L5.03949 8.0725ZM8.04939 6.77986V9.76L10.9572 8.0725L8.04939 6.77986ZM8.04939 6.67019L10.9169 7.94533L8.04939 3.27299V6.67019Z" fill="#202699"/><path fill-rule="evenodd" clip-rule="evenodd" d="M7.99978 10.4485L4.875 8.67346L7.99978 13.0004L11.1246 8.67285L7.99978 10.4485ZM5.22499 8.98552L7.94961 10.536V12.7607L5.22499 8.98552ZM8.04939 10.536V12.7607L10.7746 8.98552L8.04939 10.536Z" fill="#202699"/></svg></b>Send ETH</span>
+            </div>
+          </div>
+
+          <!-- Scene 3: status in the same dialogue -->
+          <div class="kt-scene kt-scene--status">
+            <div class="kt-bubble kt-bubble--out"><time>9:43</time>Sending this month's transfer.</div>
+            <div class="kt-tx">
+              <div class="kt-tx__head"><span>Sent</span><span class="kt-tx__ok">Completed ✓</span></div>
+              <div class="kt-tx__amt"><b class="mini-token"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M14 28C21.732 28 28 21.732 28 14C28 6.268 21.732 0 14 0C6.268 0 0 6.268 0 14C0 21.732 6.268 28 14 28Z" fill="#009393"/><path fill-rule="evenodd" clip-rule="evenodd" d="M14.0164 15.0005C16.4241 15.0005 18.4362 14.5935 18.928 14.0496C18.5104 13.5883 17.0002 13.225 15.0822 13.1256V14.2746C14.7388 14.2925 14.3818 14.3012 14.0161 14.3012C13.6503 14.3012 13.2933 14.2925 12.9493 14.2746V13.1256C11.032 13.225 9.521 13.5883 9.10345 14.0496C9.5959 14.5935 11.6084 15.0005 14.0161 15.0005H14.0164ZM18.2941 9.59198V11.1743H15.0822V12.2716C17.3383 12.3888 19.0312 12.8711 19.0438 13.4483V14.6516C19.0312 15.2287 17.3383 15.71 15.0822 15.8276V18.5205H12.9496V15.8276C10.6935 15.7103 9.00125 15.2287 8.98865 14.6516V13.4483C9.00125 12.8711 10.6935 12.3888 12.9496 12.2716V11.1743H9.73765V9.59198H18.2945H18.2941ZM8.4745 7.07373H19.7501C20.0196 7.07373 20.2678 7.21548 20.4022 7.44578L23.6869 13.0864C23.857 13.379 23.8066 13.7482 23.5637 13.9852L14.5218 22.8115C14.2285 23.0974 13.7574 23.0974 13.4648 22.8115L4.4341 13.9971C4.18595 13.7542 4.13905 13.3744 4.3221 13.0804L7.83365 7.42828C7.9705 7.20848 8.2134 7.07408 8.47485 7.07408L8.4745 7.07373Z" fill="white"/></svg></b><strong data-kt-amount>250</strong><span>USDT</span></div>
+            </div>
+            <div class="kt-msgrow kt-msgrow--in">
+              <div class="kt-frame"><span class="kt-ava">M</span></div>
+              <div class="kt-typing"><i></i><i></i><i></i></div>
+              <div class="kt-bubble kt-bubble--in"><time>9:44</time>Thank you!</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="kt-copy">
+          <span class="kt-kicker">Transaction Flow</span>
           <h2 class="h2" id="flow-title">See Who You're Paying, Then Pay Them</h2>
-        </header>
-
-        <ol class="grid-3 steps">
-          <li class="step-card">
-            <div class="ui-screen ui-call">
-              <b class="ui-call__avatar">M</b>
-              <strong>Mom</strong>
-              <span>Video call</span>
-              <div class="ui-call__controls" aria-hidden="true">
-                <i><svg width="18" height="18" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></i>
-                <i><svg width="18" height="18" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 10l5-3v10l-5-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></i>
-                <i class="is-end"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M3 14c5-5 13-5 18 0l-2.5 2.5-3-2v-2.5a10 10 0 0 0-7 0V14l-3 2z" fill="currentColor"/></svg></i>
-              </div>
-            </div>
-            <div class="step-card__text"><span class="num">1</span><p>A quick in-chat call confirms whom you're sending your stablecoins to.</p></div>
-          </li>
-          <li class="step-card">
-            <div class="ui-screen ui-menu">
-              <span><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 16l5-5 4 4 3-3 6 6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Image</span>
-              <span><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l5 5v13H6z M14 3v5h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>File</span>
-              <span class="is-active"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Send USDT</span>
-              <span><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Send ETH</span>
-            </div>
-            <div class="step-card__text"><span class="num">2</span><p>Picking the asset from the attachment menu starts the transfer.</p></div>
-          </li>
-          <li class="step-card">
-            <div class="ui-screen ui-chat">
-              <div class="bubble bubble--out">Sending this month's transfer.</div>
-              <div class="transfer-card">
-                <div class="transfer-card__body">
-                  <div class="transfer-card__head"><span>Sent</span><span class="status">Completed</span></div>
-                  <div class="transfer-card__amount"><b class="token">₮</b><div><strong>250</strong><span>USDT</span></div></div>
-                </div>
-              </div>
-              <div class="bubble bubble--in">Thank you!</div>
-            </div>
-            <div class="step-card__text"><span class="num">3</span><p>The status shows up in the same dialogue – completed in seconds.</p></div>
-          </li>
-        </ol>
-
-        <p class="h4 flow-summary">Call to confirm, send the stablecoins, check the status. All in the same chat.</p>
+          <ol class="kt-steps">
+            <li class="is-active"><button type="button" data-kt-go="0"><span class="kt-steps__ico"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="12" height="12" rx="3"/><path d="M15 10.5l6-3.5v10l-6-3.5"/></svg></span><span>A quick in-chat call confirms whom you're sending your stablecoins to.</span></button><i class="kt-steps__bar"></i></li>
+            <li><button type="button" data-kt-go="1"><span class="kt-steps__ico"><svg viewBox="0 0 24 24"><path d="M20 11.5l-8.4 8.4a5 5 0 0 1-7.1-7.1l8.4-8.4a3.3 3.3 0 0 1 4.7 4.7l-8.4 8.4a1.7 1.7 0 0 1-2.4-2.4l7.8-7.8"/></svg></span><span>Picking the asset from the attachment menu starts the transfer.</span></button><i class="kt-steps__bar"></i></li>
+            <li><button type="button" data-kt-go="2"><span class="kt-steps__ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.8"/></svg></span><span>The status shows up in the same dialogue – completed in seconds.</span></button><i class="kt-steps__bar"></i></li>
+          </ol>
+          <p class="h4 flow-summary">Call to confirm, send the stablecoins, check the status. All in the same chat.</p>
+        </div>
       </div>
     </section>
 
